@@ -86,6 +86,7 @@ GEM
     debug (1.11.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    dotenv (3.2.0)
     drb (2.2.3)
     erb (6.0.1)
     erubi (1.13.1)
@@ -257,6 +258,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  dotenv
   importmap-rails
   jbuilder
   pg (~> 1.1)
