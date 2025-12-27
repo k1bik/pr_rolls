@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   postgresql:
     container_name: "pr_rolls_postgresql"
