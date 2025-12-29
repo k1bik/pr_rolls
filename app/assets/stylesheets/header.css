@@ -1,0 +1,170 @@
+.header-mobile-dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  min-width: 320px;
+  padding: 8px 0;
+  background-color: white;
+  border-radius: 0 0 14px 14px;
+  z-index: 50;
+}
+
+.header-mobile-dropdown-menu p {
+  display: block;
+  padding: 10px 16px;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.header-mobile-container {
+  display: none;
+}
+
+.header-desktop-logo-with-text {
+  display: inline;
+}
+
+.header-desktop-logo-icon {
+  display: none;
+}
+
+.header-desktop-container {
+  position: sticky;
+  top: 8px;
+  z-index: 100;
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.header-desktop-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  min-width: 70px;
+  height: 72px;
+  background-color: white;
+  border-radius: 14px;
+}
+
+.header-desktop-nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  width: 70%;
+  height: 72px;
+  min-width: 380px;
+  background-color: white;
+  border-radius: 14px;
+}
+
+.header-desktop-contacts-container {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 50%;
+  height: 72px;
+  min-width: 100px;
+  max-width: 559px;
+  background-color: white;
+  border-radius: 14px;
+}
+
+.header-text {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+
+  &:hover {
+    color: var(--primary-green);
+  }
+}
+
+.header-contact-link {
+  text-decoration: none;
+}
+
+.header-contact-link:hover svg {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(13%) saturate(1237%) hue-rotate(129deg) brightness(93%) contrast(87%);
+}
+
+/* Мобильные устройства */
+@media (max-width: 576px) {
+  .header-mobile-container {
+    display: flex;
+    padding: 0 30px;
+    justify-content: space-between;
+    position: sticky;
+    top: 8px;
+    z-index: 100;
+    gap: 8px;
+    width: 100%;
+    align-items: center;
+    height: 72px;
+    background-color: white;
+    border-radius: 14px;
+  }
+  .header-desktop-container {
+    display: none;
+  }
+}
+
+/* Планшеты портрет */
+@media (min-width: 577px) and (max-width: 768px) {
+  .header-contact-link.telegram {
+    display: inline;
+  }
+  .header-contact-link.whatsapp {
+    display: inline;
+  }
+  .header-contact-link.phone {
+    display: none;
+  }
+  .header-desktop-logo-with-text {
+    display: none;
+  }
+  .header-desktop-logo-icon {
+    display: inline;
+  }
+  .header-desktop-nav-container {
+    gap: 8px;
+  }
+  .header-desktop-contacts-container {
+    width: 20%;
+  }
+  .header-text {
+    font-size: 22px;
+  }
+}
+
+/* Планшеты альбом / малые ноуты */
+@media (min-width: 769px) and (max-width: 992px) {
+  .header-contact-link.telegram {
+    display: none;
+  }
+  .header-contact-link.whatsapp {
+    display: none;
+  }
+  .header-desktop-logo-with-text {
+    display: none;
+  }
+  .header-desktop-logo-icon {
+    display: inline;
+  }
+  .header-desktop-nav-container {
+    gap: 20px;
+  }
+  .header-text {
+    font-size: 22px;
+  }
+}
+
+/* Стандартные десктопы */
+@media (min-width: 993px) and (max-width: 1440px) {
+}

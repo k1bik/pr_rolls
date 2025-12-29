@@ -1,0 +1,14 @@
+:root {
+  --primary-green: #1C9080;
+  --secondary-green: #65BFB5;
+}
+
+.hover-effect {
+  transition: background-color 0.3s, color 0.3s ease;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
