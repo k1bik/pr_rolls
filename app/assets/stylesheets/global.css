@@ -12,3 +12,57 @@
   display: none;
 }
 
+.title {
+  font-size: 74px;
+  font-weight: 500;
+  margin: 150px 0 100px 0;
+}
+
+.main-container {
+  margin: 0 50px 0 50px;
+}
+
+/* Мобильные устройства */
+@media (max-width: 576px) {
+  .main-container {
+    margin: 0 10px 0 10px;
+  }
+
+  .title {
+    font-size: 46px;
+    margin: 100px 0 50px 0;
+  }
+}
+
+/* Планшеты портрет */
+@media (min-width: 577px) and (max-width: 768px) {
+  .main-container {
+    margin: 0 20px 0 20px;
+  }
+
+  .title {
+    font-size: 52px;
+    margin: 100px 0 50px 0;
+  }
+}
+
+/* Планшеты альбом / малые ноуты */
+@media (min-width: 769px) and (max-width: 992px) {
+  .main-container {
+    margin: 0 30px 0 30px;
+  }
+
+  .title {
+    font-size: 52px;
+    margin: 100px 0 50px 0;
+  }
+}
+
+/* Стандартные десктопы */
+@media (min-width: 993px) and (max-width: 1440px) {
+  .title {
+    font-size: 60px;
+    margin: 150px 0 100px 0;
+  }
+}
+

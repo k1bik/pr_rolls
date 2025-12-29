@@ -1,0 +1,72 @@
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.about-item {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  p {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #606060;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 576px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 85px;
+  }
+
+  .about-item {
+    p {
+      font-size: 24px;
+    }
+  }
+}
+
+/* Планшеты портрет */
+@media (min-width: 577px) and (max-width: 768px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 85px;
+  }
+
+  .about-item {
+    p {
+      font-size: 28px;
+    }
+  }
+}
+
+/* Планшеты альбом / малые ноуты */
+@media (min-width: 769px) and (max-width: 992px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 85px;
+  }
+
+  .about-item {
+    p {
+      font-size: 30px;
+    }
+  }
+}
+
+/* Стандартные десктопы */
+@media (min-width: 993px) and (max-width: 1440px) {
+  .about-item {
+    p {
+      font-size: 30px;
+    }
+  }
+}

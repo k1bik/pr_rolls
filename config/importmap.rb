@@ -7,3 +7,5 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "@stimulus-components/dropdown", to: "@stimulus-components--dropdown.js" # @3.0.0
 pin "stimulus-use" # @0.52.3
+pin "@splidejs/splide", to: "@splidejs--splide.js" # @4.1.4
+pin "@splidejs/splide-extension-auto-scroll", to: "@splidejs--splide-extension-auto-scroll.js" # @0.5.3
