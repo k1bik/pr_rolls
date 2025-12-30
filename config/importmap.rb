@@ -9,3 +9,4 @@ pin "@stimulus-components/dropdown", to: "@stimulus-components--dropdown.js" # @
 pin "stimulus-use" # @0.52.3
 pin "@splidejs/splide", to: "@splidejs--splide.js" # @4.1.4
 pin "@splidejs/splide-extension-auto-scroll", to: "@splidejs--splide-extension-auto-scroll.js" # @0.5.3
+pin "@stimulus-components/scroll-to", to: "@stimulus-components--scroll-to.js" # @5.0.1

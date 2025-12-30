@@ -1,0 +1,9 @@
+.equipment-types-container {
+  padding: 50px 0;
+  background-color: black;
+}
+
+/* Мобильные устройства */
+@media (max-width: 576px) {
+  .equipment-types-container { padding-top: 1px; }
+}

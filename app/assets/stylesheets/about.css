@@ -10,9 +10,9 @@
   gap: 50px;
 
   p {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 2;
     color: #606060;
   }
 }
@@ -26,9 +26,7 @@
   }
 
   .about-item {
-    p {
-      font-size: 24px;
-    }
+    p { font-size: 14px; }
   }
 }
 
@@ -41,9 +39,7 @@
   }
 
   .about-item {
-    p {
-      font-size: 28px;
-    }
+    p { font-size: 14px; }
   }
 }
 
@@ -56,17 +52,6 @@
   }
 
   .about-item {
-    p {
-      font-size: 30px;
-    }
-  }
-}
-
-/* Стандартные десктопы */
-@media (min-width: 993px) and (max-width: 1440px) {
-  .about-item {
-    p {
-      font-size: 30px;
-    }
+    p { font-size: 16px; }
   }
 }
