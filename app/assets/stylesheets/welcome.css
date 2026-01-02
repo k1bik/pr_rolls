@@ -5,7 +5,7 @@
   min-height: 100dvh;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
-    url('main.webp');
+    url("welcome.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

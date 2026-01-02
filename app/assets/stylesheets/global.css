@@ -42,12 +42,13 @@
   &.white { background-color: white; }
 }
 
-.description {
+.text {
   font-size: 24px;
   font-weight: 400;
   line-height: 2;
 
   &.white { color: white; }
+  &.gray { color: #606060; }
 }
 
 .list {
@@ -95,7 +96,7 @@
     margin: 60px 0 30px 0;
   }
 
-  .description, .list  { font-size: 14px; }
+  .text, .list  { font-size: 14px; }
   .image { max-height: 200px; }
 }
 
@@ -109,7 +110,7 @@
   }
 
   .subtitle { font-size: 24px }
-  .description, .list { font-size: 14px; }
+  .text, .list { font-size: 14px; }
   .image { max-height: 350px; }
 }
 
@@ -127,6 +128,6 @@
     margin: 50px 0 50px 0;
   }
 
-  .description, .list { font-size: 16px; }
+  .text, .list { font-size: 16px; }
   .image { max-height: 650px; }
 }
