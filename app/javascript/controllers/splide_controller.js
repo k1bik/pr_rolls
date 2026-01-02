@@ -8,24 +8,13 @@ export default class SplideController extends Controller {
       type: "loop",
       drag: "free",
       focus: "center",
-      perPage: 5,
+      perPage: 4,
       breakpoints: {
-        1920: {
-          perPage: 4,
-        },
-        1440: {
-          perPage: 3,
-        },
-        1200: {
-          perPage: 2,
-        },
-        780: {
-          perPage: 1,
-        },
+        1920: { perPage: 3 },
+        1400: { perPage: 2 },
+        780: { perPage: 1 },
       },
-      autoScroll: {
-        speed: 2,
-      },
+      autoScroll: { speed: 2 },
     })
 
     splide.mount({ AutoScroll })
