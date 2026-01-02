@@ -5,11 +5,6 @@
 
 .hidden { display: none; }
 
-.hover-effect {
-  transition: background-color 0.3s, color 0.3s ease;
-  cursor: pointer;
-}
-
 .title {
   font-size: 64px;
   font-weight: 500;

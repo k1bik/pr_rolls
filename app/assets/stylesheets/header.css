@@ -1,3 +1,42 @@
+.header-desktop-container {
+  display: flex;
+  position: sticky;
+  width: 100%;
+  top: 8px;
+  z-index: 100;
+  gap: 8px;
+}
+
+.header-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  background-color: #fff;
+  border-radius: 14px;
+}
+
+.header-desktop-logo-container {
+  min-width: 70px;
+  width: 25%;
+}
+
+.header-desktop-nav-container {
+  gap: 50px;
+  min-width: 380px;
+  width: 70%;
+}
+
+.header-desktop-contacts-container {
+  gap: 10px;
+  min-width: 100px;
+  max-width: 559px;
+  width: 50%;
+}
+
+.header-desktop-logo-with-text { display: inline; }
+.header-desktop-logo-icon { display: none; }
+
 .header-mobile-dropdown-menu {
   position: absolute;
   right: 0;
@@ -11,10 +50,7 @@
 }
 
 .header-mobile-dropdown-menu a {
-  color: black;
   display: block;
-  text-decoration: none;
-  font-weight: 500;
   font-size: 20px;
 }
 
@@ -25,68 +61,19 @@
 }
 
 .header-mobile-container { display: none; }
-.header-desktop-logo-with-text { display: inline; }
-.header-desktop-logo-icon { display: none; }
-
-.header-desktop-container {
-  position: sticky;
-  top: 8px;
-  z-index: 100;
-  display: flex;
-  gap: 8px;
-  width: 100%;
-}
-
-.header-desktop-logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25%;
-  min-width: 70px;
-  height: 72px;
-  background-color: white;
-  border-radius: 14px;
-}
-
-.header-desktop-nav-container {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  align-items: center;
-  width: 70%;
-  height: 72px;
-  min-width: 380px;
-  background-color: white;
-  border-radius: 14px;
-}
-
-.header-desktop-contacts-container {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 50%;
-  height: 72px;
-  min-width: 100px;
-  max-width: 559px;
-  background-color: white;
-  border-radius: 14px;
-}
 
 .header-text {
   font-size: 24px;
   font-weight: 500;
   color: #000;
-  text-decoration: none;
+  transition: color 0.3s ease;
 
   &:hover { color: var(--primary-green); }
 }
 
-.header-contact-link { text-decoration: none; }
-
-.header-contact-link:hover svg {
-  filter: brightness(0) saturate(100%) invert(62%) sepia(13%) saturate(1237%) hue-rotate(129deg) brightness(93%) contrast(87%);
+.header-contact-link:hover svg path {
+  fill: #65BFB5;
+  transition: fill 0.3s ease;
 }
 
 /* Мобильные устройства */
