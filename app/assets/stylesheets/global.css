@@ -51,17 +51,6 @@
   &.gray { color: #606060; }
 }
 
-.list {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 2;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  &.white { color: white; }
-}
-
 .main-container {
   margin: 0 100px;
   max-width: 1720px;
@@ -96,7 +85,7 @@
     margin: 60px 0 30px 0;
   }
 
-  .text, .list  { font-size: 14px; }
+  .text { font-size: 14px; }
   .image { max-height: 200px; }
 }
 
@@ -110,7 +99,7 @@
   }
 
   .subtitle { font-size: 24px }
-  .text, .list { font-size: 14px; }
+  .text { font-size: 14px; }
   .image { max-height: 350px; }
 }
 
@@ -128,6 +117,6 @@
     margin: 50px 0 50px 0;
   }
 
-  .text, .list { font-size: 16px; }
+  .text { font-size: 16px; }
   .image { max-height: 650px; }
 }
