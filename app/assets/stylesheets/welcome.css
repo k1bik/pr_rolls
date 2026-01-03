@@ -11,9 +11,30 @@
   background-position: center;
 }
 
+.welcome-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 400px 50px 0 50px;
+}
+
+.welcome-button {
+  font-size: 30px;
+  font-weight: 700;
+  width: fit-content;
+  color: #fff;
+  padding: 30px 90px;
+  border-radius: 14px;
+  background-color: var(--primary-green);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--secondary-green);
+  }
+}
+
 .welcome-title {
-  padding: 450px 50px 0 50px;
-  font-size: 64px;
+  font-size: 60px;
   font-weight: 500;
   line-height: 1.2;
   color: #fff;
@@ -21,21 +42,38 @@
 
 /* Мобильные устройства */
 @media (max-width: 576px) {
-  .welcome-title {
-    padding: 300px 5px 0 5px;
-    font-size: 32px;
+  .welcome-content-container { padding: 300px 5px 0 5px; }
+  .welcome-title { font-size: 30px; }
+  .welcome-button {
+    font-size: 16px;
+    padding: 18px 50px;
   }
 }
 
 /* Планшеты портрет */
 @media (min-width: 577px) and (max-width: 768px) {
-  .welcome-title {
-    font-size: 36px;
-    padding: 350px 30px 0 30px;
+  .welcome-content-container { padding: 350px 30px 0 30px; }
+  .welcome-title { font-size: 30px; }
+  .welcome-button {
+    font-size: 20px;
+    padding: 20px 48px;
   }
 }
 
 /* Планшеты альбом / малые ноуты */
 @media (min-width: 769px) and (max-width: 992px) {
+  .welcome-title { font-size: 36px; }
+  .welcome-button {
+    font-size: 24px;
+    padding: 24px 80px;
+  }
+}
+
+/* Ноутбуки */
+@media (min-width: 993px) and (max-width: 1400px) {
   .welcome-title { font-size: 48px; }
+  .welcome-button {
+    font-size: 24px;
+    padding: 24px 80px;
+  }
 }

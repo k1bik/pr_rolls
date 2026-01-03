@@ -43,9 +43,10 @@
 <!-- Mobile header -->
 
 <section class="welcome-container">
-  <h1 class="welcome-title">
-    Сервис и ремонт вращающегося оборудования без остановки производства
-  </h1>
+  <div class="welcome-content-container">
+    <h1 class="welcome-title">Сервис и ремонт вращающегося оборудования без остановки производства</h1>
+    <a href="#feedback" data-controller="scroll-to" class="welcome-button">Оставить заявку</a>
+  </div>
 </section>
 
 <main class="main-container">
@@ -137,7 +138,7 @@
   <main class="main-container">
     <div data-appear-target="item" class="fade-in">
       <h1 class="title white">Типы ремонтируемого оборудования:</h1>
-      <h2 class="subtitle white">Фильтры DD Washer (DD-промыватели).</h2>
+      <h2 class="subtitle white bold">Фильтры DD Washer (DD-промыватели).</h2>
       <img src="<%= asset_path("dd-washer.webp") %>" alt="dd-washer" loading="lazy" class="image">
       <div class="divider white"></div>
       <p class="text white">
@@ -153,7 +154,7 @@
     </div>
 
     <div data-appear-target="item" class="fade-in">
-      <h2 class="subtitle white">Валы и цилиндры БДМ и КДМ.</h2>
+      <h2 class="subtitle white bold">Валы и цилиндры БДМ и КДМ.</h2>
       <img src="<%= asset_path("shafts-and-cylinders.webp") %>" alt="shafts-and-cylinders" loading="lazy" class="image">
       <div class="divider white"></div>
       <p class="text white">
@@ -167,7 +168,7 @@
     </div>
 
     <div data-appear-target="item" class="fade-in">
-      <h2 class="subtitle white">Бандажи и опорные ролики вращающихся печей и барабанов.</h2>
+      <h2 class="subtitle white bold">Бандажи и опорные ролики вращающихся печей и барабанов.</h2>
       <img src="<%= asset_path("bandages-and-support-rollers.webp") %>" alt="bandages-and-support-rollers" loading="lazy" class="image">
       <div class="divider white"></div>
       <ul class="text white">
@@ -176,7 +177,7 @@
     </div>
 
     <div data-appear-target="item" class="fade-in">
-      <h2 class="subtitle white">Цапфы и посадочные места вращающегося оборудования.</h2>
+      <h2 class="subtitle white bold">Цапфы и посадочные места вращающегося оборудования.</h2>
       <img src="<%= asset_path("trunnions.webp") %>" alt="trunnions" loading="lazy" class="image">
       <div class="divider white"></div>
       <ul class="text white">
@@ -190,7 +191,7 @@
   <main class="main-container">
     <div data-appear-target="item" class="fade-in">
       <h1 class="title">Виды выполняемых работ:</h1>
-      <h2 class="subtitle">Механическая обработка</h2>
+      <h2 class="subtitle bold">Механическая обработка</h2>
       <img src="<%= asset_path("mechanical-processing.webp") %>" alt="mechanical-processing" loading="lazy" class="image">
       <div class="divider"></div>
       <ul class="text">
@@ -204,7 +205,7 @@
       </ul>
     </div>
     <div data-appear-target="item" class="fade-in">
-      <h2 class="subtitle">Нанесение покрытий</h2>
+      <h2 class="subtitle bold">Нанесение покрытий</h2>
       <img src="<%= asset_path("coating-application.webp") %>" alt="coating-application" loading="lazy" class="image">
       <div class="divider"></div>
       <p class="text">
@@ -223,7 +224,7 @@
       </p>
     </div>
     <div data-appear-target="item" class="fade-in">
-      <h2 class="subtitle">Диагностика</h2>
+      <h2 class="subtitle bold">Диагностика</h2>
       <img src="<%= asset_path("diagnostics.webp") %>" alt="diagnostics" loading="lazy" class="image">
       <div class="divider"></div>
       <ul class="text">
@@ -237,5 +238,68 @@
         <li>— Соосность подшипников рулевого колеса</li>
       </ul>
     </div>
+
+    <!--
+    <h1 class="title center" style="margin-bottom: 25px;">Отзывы наших клиентов</h1>
+    <h2 class="subtitle gray center" style="margin-top: 0px;">Надёжность и качество, подтверждённые опытом</h2>
+    -->
   </main>
 </section>
+<main class="small-container">
+  <div data-appear-target="item" class="fade-in">
+    <form id="feedback" action="/feedback" method="post" class="feedback-form">
+      <h2 class="feedback-subtitle">Форма обратной связи</h2>
+      <h1 class="feedback-title">Оставить заявку</h1>
+      <div class="feedback-form-inputs-container">
+        <input type="text" name="name" placeholder="Ваше имя*" required>
+        <input type="text" name="phone" maxlength="20" placeholder="Номер телефона*" required>
+        <input type="text" name="email" placeholder="E-mail*" required>
+        <input type="text" name="comment" maxlength="300" placeholder="Комментарий">
+        <div class="feedback-form-consent">
+          <input type="checkbox" name="consent" id="consent" required>
+          <label for="consent">Я согласен на <a href="#">Обработку персональных данных</a></label>
+        </div>
+      </div>
+      <button type="submit">Отправить заявку</button>
+    </form>
+    <section id="contacts" class="contacts-container">
+      <div class="contacts-header">
+        <h1 class="subtitle bold" style="margin: 0">Контакты</h1>
+        <a class="subtitle green bold" style="margin: 0" href="mailto:info@prrolls.ru" target="_blank">
+          <span style="display: inline-flex; align-items: center; gap: 16px;">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 55 47"
+              style="height: 1em; width: auto; vertical-align: -0.1em; flex-shrink: 0;"
+              fill="none"
+            >
+              <path fill="#1C9080" stroke="#1C9080" stroke-width=".4" d="M.2 14.174v22.825c0 2.44.947 4.78 2.635 6.506A8.902 8.902 0 0 0 9.2 46.199h36c2.387 0 4.676-.97 6.364-2.694a9.305 9.305 0 0 0 2.636-6.506V9.4c0-2.44-.948-4.78-2.636-6.505A8.902 8.902 0 0 0 45.2.199h-36c-2.387 0-4.676.97-6.364 2.695A9.305 9.305 0 0 0 .2 9.399v4.775Zm9-9.375h36a4.45 4.45 0 0 1 3.181 1.348A4.652 4.652 0 0 1 49.7 9.399v3.404L27.2 25.186 4.7 12.803V9.4c0-1.22.474-2.39 1.318-3.252A4.45 4.45 0 0 1 9.2 4.799ZM4.7 18.03l21.433 11.794a2.211 2.211 0 0 0 2.133 0L49.699 18.03v18.97c0 1.22-.474 2.39-1.318 3.253a4.45 4.45 0 0 1-3.182 1.347h-36a4.45 4.45 0 0 1-3.182-1.347A4.652 4.652 0 0 1 4.7 36.999V18.03Z"/>
+            </svg>
+            info@prrolls.ru
+          </span>
+        </a>
+      </div>
+      <div class="divider"></div>
+      <div class="contacts-content">
+        <div class="contacts-item">
+          <p class="text">Генеральный директор: Гугнин Михаил Михайлович</p>
+          <a class="text" href="tel:+79213581493" target="_blank">
+            +7 921 358-14-93
+          </a>
+        </div>
+        <div class="contacts-item">
+          <p class="text">Технический специалист: Клименко Илья Викторович</p>
+          <a class="text" href="tel:+79112254463" target="_blank">
+            +7 911 225-44-63
+          </a>
+        </div>
+        <div class="contacts-item">
+          <p class="text">Коммерция: Артемьев Леонид Алексеевич</p>
+          <a class="text" href="tel:+79042263681" target="_blank">
+            +7 904 226-36-81
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

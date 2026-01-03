@@ -1,0 +1,133 @@
+.feedback-form {
+  border-radius: 30px;
+  padding: 50px;
+  box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.feedback-form input {
+  height: 40px;
+  padding: 0;
+  color: var(--gray);
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 18px;
+  caret-color: var(--primary-green);
+  outline: none;
+
+  &::placeholder {
+    font-size: 18px;
+    color: var(--gray);
+  }
+}
+
+.feedback-title {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.feedback-subtitle {
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+.feedback-form-inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.feedback-form-consent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: var(--gray);
+}
+
+.feedback-form-consent input {
+  width: 24px;
+  height: 24px;
+  border: 2px solid black;
+  border-radius: 0px;
+  outline: none;
+  accent-color: var(--primary-green);
+}
+
+.feedback-form-consent a {
+  text-decoration: underline;
+  color: var(--gray);
+}
+
+.feedback-form button {
+  color: white;
+  padding: 20px 0;
+  background-color: var(--primary-green);
+  border-radius: 20px;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    background-color: var(--secondary-green);
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 576px) {
+  .feedback-form-consent { font-size: 14px; }
+  .feedback-form {
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+  .feedback-form button { font-size: 16px; }
+  .feedback-subtitle { font-size: 14px; }
+  .feedback-form-inputs-container { gap: 20px; }
+  .feedback-form input {
+    font-size: 14px;
+    &::placeholder { font-size: 14px; }
+  }
+  .feedback-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .feedback-form-consent input {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Планшеты портрет */
+@media (min-width: 577px) and (max-width: 768px) {
+  .feedback-form button {font-size: 18px; }
+  .feedback-title { font-size: 24px; }
+  .feedback-subtitle { font-size: 16px; }
+  .feedback-form input {
+    font-size: 16px;
+    &::placeholder { font-size: 16px; }
+  }
+  .feedback-form { margin-bottom: 60px; }
+}
+
+/* Планшеты альбом / малые ноуты */
+@media (min-width: 769px) and (max-width: 992px) {
+  .feedback-form button { font-size: 20px; }
+  .feedback-title { font-size: 36px; }
+  .feedback-subtitle { font-size: 24px; }
+  .feedback-form { margin-bottom: 80px; }
+}
+
+/* Ноутбуки */
+@media (min-width: 993px) and (max-width: 1400px) {
+  .feedback-form button { font-size: 24px; }
+  .feedback-title { font-size: 36px; }
+  .feedback-subtitle { font-size: 24px; }
+}

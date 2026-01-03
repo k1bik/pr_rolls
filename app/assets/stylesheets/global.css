@@ -1,24 +1,33 @@
 :root {
   --primary-green: #1C9080;
   --secondary-green: #65BFB5;
+  --gray: #606060;
+  --light-gray: #f0f0f0;
 }
 
 .hidden { display: none; }
 
 .title {
-  font-size: 64px;
+  font-size: 60px;
   font-weight: 500;
   margin: 100px 0 100px 0;
 
   &.white { color: white; }
+  &.center { text-align: center; }
 }
 
 .subtitle {
-  font-size: 40px;
-  font-weight: 600;
+  font-size: 36px;
   margin: 100px 0 50px 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 
   &.white { color: white; }
+  &.gray { color: var(--gray); }
+  &.green { color: var(--primary-green); }
+  &.center { text-align: center; }
+  &.bold { font-weight: 600; }
 }
 
 .image {
@@ -48,7 +57,7 @@
   line-height: 2;
 
   &.white { color: white; }
-  &.gray { color: #606060; }
+  &.gray { color: var(--gray); }
 }
 
 .main-container {
@@ -58,6 +67,15 @@
 
 @media (min-width: 1721px) {
   .main-container { margin: 0 auto; }
+}
+
+.small-container {
+  margin: 0 100px;
+  max-width: 900px;
+}
+
+@media (min-width: 901px) {
+  .small-container { margin: 0 auto; }
 }
 
 .fade-in {
@@ -74,9 +92,10 @@
 /* Мобильные устройства */
 @media (max-width: 576px) {
   .main-container { margin: 0 10px 0 10px; }
+  .small-container { margin: 0 10px 0 10px; }
 
   .title {
-    font-size: 32px;
+    font-size: 30px;
     margin: 60px 0 30px 0;
   }
 
@@ -92,20 +111,22 @@
 /* Планшеты портрет */
 @media (min-width: 577px) and (max-width: 768px) {
   .main-container { margin: 0 20px 0 20px; }
+  .small-container { margin: 0 100px 0 100px; }
 
   .title {
-    font-size: 40px;
+    font-size: 36px;
     margin: 100px 0 50px 0;
   }
 
   .subtitle { font-size: 24px }
-  .text { font-size: 14px; }
+  .text { font-size: 16px; }
   .image { max-height: 350px; }
 }
 
 /* Планшеты альбом / малые ноуты */
 @media (min-width: 769px) and (max-width: 992px) {
   .main-container { margin: 0 30px 0 30px; }
+  .small-container { margin: 0 100px 0 100px; }
 
   .title {
     font-size: 40px;
@@ -113,10 +134,18 @@
   }
 
   .subtitle {
-    font-size: 32px;
+    font-size: 24px;
     margin: 50px 0 50px 0;
   }
 
-  .text { font-size: 16px; }
+  .text { font-size: 18px; }
   .image { max-height: 650px; }
+}
+
+/* Ноутбуки */
+@media (min-width: 993px) and (max-width: 1400px) {
+  .small-container { margin: 0 200px 0 200px; }
+  .title { font-size: 48px; }
+  .subtitle { font-size: 30px; }
+  .text { font-size: 20px; }
 }
