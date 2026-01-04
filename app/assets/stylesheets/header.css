@@ -44,9 +44,8 @@
   position: absolute;
   right: -8px;
   top: -8px;
-  line-height: 1.5;
   width: 100vw;
-  padding: 16px 52px;
+  padding: 18px 38px;
   background-color: var(--light-gray);
   border-radius: 0 0 14px 14px;
   z-index: 50;
@@ -61,6 +60,11 @@
   display: flex;
   justify-content: end;
   width: 100%;
+}
+
+.header-mobile-dropdown-menu-open-button {
+  display: flex;
+  align-items: center;
 }
 
 .header-mobile-container { display: none; }
@@ -79,20 +83,26 @@
   transition: fill 0.3s ease;
 }
 
+.header-contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Мобильные устройства */
 @media (max-width: 576px) {
   .header-mobile-container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 30px;
     margin-left: 8px;
     margin-right: 8px;
-    justify-content: space-between;
     position: sticky;
     top: 8px;
     z-index: 100;
     gap: 8px;
     width: calc(100% - 16px);
-    align-items: center;
     height: 72px;
     background-color: var(--light-gray);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.20);
@@ -105,8 +115,6 @@
 
 /* Планшеты портрет */
 @media (min-width: 577px) and (max-width: 768px) {
-  .header-contact-link.telegram { display: inline; }
-  .header-contact-link.whatsapp { display: inline; }
   .header-contact-link.phone { display: none; }
   .header-desktop-logo-with-text { display: none; }
   .header-desktop-logo-icon { display: inline; }

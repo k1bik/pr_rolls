@@ -15,8 +15,10 @@
   .about-container {
     display: flex;
     flex-direction: column;
-    gap: 85px;
+    gap: 50px;
   }
+
+  .about-item { gap: 20px; }
 }
 
 /* Планшеты портрет */
@@ -24,8 +26,10 @@
   .about-container {
     display: flex;
     flex-direction: column;
-    gap: 85px;
+    gap: 50px;
   }
+
+  .about-item { gap: 20px; }
 }
 
 /* Планшеты альбом / малые ноуты */
@@ -33,6 +37,8 @@
   .about-container {
     display: flex;
     flex-direction: column;
-    gap: 85px;
+    gap: 50px;
   }
+
+  .about-item { gap: 20px; }
 }
