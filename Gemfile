@@ -16,7 +16,3 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "dotenv"
 end
-
-group :development do
-  gem "web-console"
-end

@@ -1,30 +1,14 @@
-.equipment-types-container {
+.equipment-container {
   padding: 50px 0;
   background-color: black;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
 }
 
 /* Мобильные устройства */
 @media (max-width: 576px) {
-  .equipment-types-container {
-    padding-top: 1px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
+  .equipment-container { padding-top: 1px; }
 }
 
+/* Планшеты портрет */
 @media (min-width: 577px) and (max-width: 768px) {
-  .equipment-types-container {
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-}
-
-/* Планшеты альбом / малые ноуты */
-@media (min-width: 769px) and (max-width: 992px) {
-  .equipment-types-container {
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-  }
+  .equipment-container { padding-top: 10px; }
 }

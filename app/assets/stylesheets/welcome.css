@@ -19,7 +19,6 @@
   align-items: flex-start;
   justify-content: center;
   height: 100%;
-  /* контейнер будет всегда по центру по вертикали, прижат к левому краю с отступом */
 }
 
 .welcome-button {

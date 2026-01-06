@@ -130,7 +130,7 @@
     </div>
   </div>
 </main>
-<section id="equipment" class="equipment-types-container">
+<section id="equipment" class="equipment-container">
   <main class="main-container">
     <div data-appear-target="item" class="fade-in">
       <h1 class="title white">Типы ремонтируемого оборудования:</h1>
@@ -180,59 +180,57 @@
     </div>
   </main>
 </section>
-<section id="services">
-  <main class="main-container">
-    <div data-appear-target="item" class="fade-in">
-      <h1 class="title">Виды выполняемых работ:</h1>
-      <h2 class="subtitle bold">Механическая обработка</h2>
-      <img src="<%= asset_path("mechanical-processing.webp") %>" alt="mechanical-processing" loading="lazy" class="image">
-      <div class="divider"></div>
+<main class="main-container" id="services">
+  <div data-appear-target="item" class="fade-in">
+    <h1 class="title">Виды выполняемых работ:</h1>
+    <h2 class="subtitle bold">Механическая обработка</h2>
+    <img src="<%= asset_path("mechanical-processing.webp") %>" alt="mechanical-processing" loading="lazy" class="image">
+    <div class="divider"></div>
+    <ul class="text">
+      <li>— Устранение дефектов покрытия вала, улучшение качества поверхности;</li>
+      <li>— Достижение точных размеров и форм вала;</li>
+      <li>— Минимизирование шероховатости поверхности вала;</li>
+      <li>— Снижение биения вала на высоких оборотах;</li>
+      <li>— Снижение риска коррозии вала;</li>
+      <li>— Улучшение износостойкости и продление срока службы вала.</li>
+      <li>— Улучшение качества конечного продукта.</li>
+    </ul>
+  </div>
+  <div data-appear-target="item" class="fade-in">
+    <h2 class="subtitle bold">Нанесение покрытий</h2>
+    <img src="<%= asset_path("coating-application.webp") %>" alt="coating-application" loading="lazy" class="image">
+    <div class="divider"></div>
+    <p class="text">
+      <b>Виды покрытий:</b><br>
+      TecnoClean — антиадгезионное; TecnoClean + шлифовка; TecnoCleanCera Hybrid — усиленная защита; TecnoGuide — антикоррозионное; TecnoGuide HT — антикоррозионное + антиадгезионное; TecnoGrip — противоскользящее; TecnoDiamond — сверхтвёрдое; TecnoMicro — PTFE-покрытие.<br><br>
+      <b>Преимущества нанесения покрытий:</b><br>
       <ul class="text">
-        <li>— Устранение дефектов покрытия вала, улучшение качества поверхности;</li>
-        <li>— Достижение точных размеров и форм вала;</li>
-        <li>— Минимизирование шероховатости поверхности вала;</li>
-        <li>— Снижение биения вала на высоких оборотах;</li>
-        <li>— Снижение риска коррозии вала;</li>
-        <li>— Улучшение износостойкости и продление срока службы вала.</li>
+        <li>— Защита поверхности вала от коррозии;</li>
+        <li>— Предотвращение налипания технологических химикатов;</li>
+        <li>— Повышение эффективности эксплуатации и снижение простоев;</li>
+        <li>— Упрощение очистки поверхности, устойчивость к агрессивным средам;</li>
+        <li>— Расширение температурного диапазона при сушке;</li>
+        <li>— Продление срока службы покрытия;</li>
         <li>— Улучшение качества конечного продукта.</li>
       </ul>
-    </div>
-    <div data-appear-target="item" class="fade-in">
-      <h2 class="subtitle bold">Нанесение покрытий</h2>
-      <img src="<%= asset_path("coating-application.webp") %>" alt="coating-application" loading="lazy" class="image">
-      <div class="divider"></div>
-      <p class="text">
-        <b>Виды покрытий:</b><br>
-        TecnoClean — антиадгезионное; TecnoClean + шлифовка; TecnoCleanCera Hybrid — усиленная защита; TecnoGuide — антикоррозионное; TecnoGuide HT — антикоррозионное + антиадгезионное; TecnoGrip — противоскользящее; TecnoDiamond — сверхтвёрдое; TecnoMicro — PTFE-покрытие.<br><br>
-        <b>Преимущества нанесения покрытий:</b><br>
-        <ul class="text">
-          <li>— Защита поверхности вала от коррозии;</li>
-          <li>— Предотвращение налипания технологических химикатов;</li>
-          <li>— Повышение эффективности эксплуатации и снижение простоев;</li>
-          <li>— Упрощение очистки поверхности, устойчивость к агрессивным средам;</li>
-          <li>— Расширение температурного диапазона при сушке;</li>
-          <li>— Продление срока службы покрытия;</li>
-          <li>— Улучшение качества конечного продукта.</li>
-        </ul>
-      </p>
-    </div>
-    <div data-appear-target="item" class="fade-in">
-      <h2 class="subtitle bold">Диагностика</h2>
-      <img src="<%= asset_path("diagnostics.webp") %>" alt="diagnostics" loading="lazy" class="image">
-      <div class="divider"></div>
-      <ul class="text">
-        <li>— Выравнивание вала/муфты двигателей, коробок передач и роликов (опциональное измерение универсального шарнира)</li>
-        <li>— Точное измерение уровня</li>
-        <li>— Измерение уровня основания двигателя</li>
-        <li>— Измерение уровня основания для установки Azipod</li>
-        <li>— Измерение соосности отверстий на коленчатом валу двигателя</li>
-        <li>— Измерения для дизельных двигателей Wärtsilä</li>
-        <li>— Измерение соосности вала на линии двигатель-гребной винт</li>
-        <li>— Соосность подшипников рулевого колеса</li>
-      </ul>
-    </div>
-  </main>
-</section>
+    </p>
+  </div>
+  <div data-appear-target="item" class="fade-in">
+    <h2 class="subtitle bold">Диагностика</h2>
+    <img src="<%= asset_path("diagnostics.webp") %>" alt="diagnostics" loading="lazy" class="image">
+    <div class="divider"></div>
+    <ul class="text">
+      <li>— Выравнивание вала/муфты двигателей, коробок передач и роликов (опциональное измерение универсального шарнира)</li>
+      <li>— Точное измерение уровня</li>
+      <li>— Измерение уровня основания двигателя</li>
+      <li>— Измерение уровня основания для установки Azipod</li>
+      <li>— Измерение соосности отверстий на коленчатом валу двигателя</li>
+      <li>— Измерения для дизельных двигателей Wärtsilä</li>
+      <li>— Измерение соосности вала на линии двигатель-гребной винт</li>
+      <li>— Соосность подшипников рулевого колеса</li>
+    </ul>
+  </div>
+</main>
 <main class="small-container">
   <div data-appear-target="item" class="fade-in">
     <turbo-frame id="feedback-request-form">

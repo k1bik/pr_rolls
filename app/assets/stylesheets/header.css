@@ -39,6 +39,7 @@
 
 .header-desktop-logo-with-text { display: inline; }
 .header-desktop-logo-icon { display: none; }
+.header-mobile-container { display: none; }
 
 .header-mobile-dropdown-menu {
   position: absolute;
@@ -49,6 +50,7 @@
   background-color: var(--light-gray);
   border-radius: 0 0 14px 14px;
   z-index: 50;
+  line-height: 2;
 }
 
 .header-mobile-dropdown-menu a {
@@ -67,8 +69,6 @@
   align-items: center;
 }
 
-.header-mobile-container { display: none; }
-
 .header-text {
   font-size: 24px;
   font-weight: 500;
@@ -79,7 +79,7 @@
 }
 
 .header-contact-link:hover svg path {
-  fill: #65BFB5;
+  fill: var(--secondary-green);
   transition: fill 0.3s ease;
 }
 

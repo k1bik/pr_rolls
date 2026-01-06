@@ -1,5 +1,5 @@
 .feedback-request-form {
-  border-radius: 30px;
+  border-radius: 14px;
   padding: 50px;
   box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.25);
   display: flex;
@@ -89,7 +89,7 @@
   color: white;
   padding: 20px 0;
   background-color: var(--primary-green);
-  border-radius: 20px;
+  border-radius: 14px;
   font-size: 24px;
   transition: all 0.3s ease;
   text-align: center;
