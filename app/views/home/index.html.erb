@@ -41,7 +41,7 @@
 <section class="welcome-container">
   <div class="welcome-content-container">
     <h1 class="welcome-title">Сервис и ремонт вращающегося оборудования без остановки производства</h1>
-    <a href="#feedback" data-controller="scroll-to" class="welcome-button">Оставить заявку</a>
+    <a href="#feedback-request-form" data-controller="scroll-to" class="welcome-button">Оставить заявку</a>
   </div>
 </section>
 
@@ -235,21 +235,9 @@
 </section>
 <main class="small-container">
   <div data-appear-target="item" class="fade-in">
-    <form id="feedback" action="/feedback" method="post" class="feedback-form">
-      <h2 class="feedback-subtitle">Форма обратной связи</h2>
-      <h1 class="feedback-title">Оставить заявку</h1>
-      <div class="feedback-form-inputs-container">
-        <input type="text" name="name" placeholder="Ваше имя*" required>
-        <input type="text" name="phone" maxlength="20" placeholder="Номер телефона*" required>
-        <input type="text" name="email" placeholder="E-mail*" required>
-        <input type="text" name="comment" maxlength="300" placeholder="Комментарий">
-        <div class="feedback-form-consent">
-          <input type="checkbox" name="consent" id="consent" required>
-          <label for="consent">Я согласен на <a href="#">Обработку персональных данных</a></label>
-        </div>
-      </div>
-      <button type="submit">Оставить заявку</button>
-    </form>
+    <turbo-frame id="feedback-request-form">
+      <%= render "feedback_requests/form", feedback_request: %>
+    </turbo-frame>
     <section id="contacts" class="contacts-container">
       <div class="contacts-header">
         <h1 class="subtitle bold" style="margin: 0">Контакты</h1>

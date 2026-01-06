@@ -1,4 +1,4 @@
-.feedback-form {
+.feedback-request-form {
   border-radius: 30px;
   padding: 50px;
   box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.25);
@@ -7,7 +7,7 @@
   margin: 100px 0;
 }
 
-.feedback-form input {
+.feedback-request-form input {
   height: 40px;
   padding: 0;
   color: var(--gray);
@@ -23,27 +23,46 @@
   }
 }
 
-.feedback-title {
+.feedback-request-title {
   font-size: 48px;
   font-weight: 500;
   margin-bottom: 40px;
 }
 
-.feedback-subtitle {
+.feedback-request-subtitle {
   font-size: 36px;
   font-weight: 400;
   color: var(--gray);
   margin-bottom: 20px;
 }
 
-.feedback-form-inputs-container {
+.feedback-request-form-inputs-container {
   display: flex;
   flex-direction: column;
   gap: 30px;
   margin-bottom: 50px;
 }
 
-.feedback-form-consent {
+.feedback-request-form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &.error {
+    input {
+      &::placeholder {
+        color: var(--red);
+      }
+    }
+  }
+}
+
+.feedback-request-form-input-error {
+  color: var(--red);
+  font-size: 18px;
+}
+
+.feedback-request-form-consent {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -51,21 +70,22 @@
   color: var(--gray);
 }
 
-.feedback-form-consent input {
+.feedback-request-form-consent input {
   width: 24px;
   height: 24px;
   border: 2px solid black;
   border-radius: 0px;
   outline: none;
   accent-color: var(--primary-green);
+  cursor: pointer;
 }
 
-.feedback-form-consent a {
+.feedback-request-form-consent a {
   text-decoration: underline;
   color: var(--gray);
 }
 
-.feedback-form button {
+.feedback-request-form button {
   color: white;
   padding: 20px 0;
   background-color: var(--primary-green);
@@ -83,26 +103,27 @@
 
 /* Мобильные устройства */
 @media (max-width: 576px) {
-  .feedback-form-consent { font-size: 14px; }
-  .feedback-form {
+  .feedback-request-form-consent { font-size: 14px; }
+  .feedback-request-form {
     padding: 20px;
     margin-bottom: 50px;
   }
-  .feedback-form button { font-size: 16px; }
-  .feedback-subtitle {
+  .feedback-request-form button { font-size: 16px; }
+  .feedback-request-form-input-error { font-size: 14px; }
+  .feedback-request-subtitle {
     font-size: 14px;
-    margin: 0;
+    margin-bottom: 12px;
   }
-  .feedback-form-inputs-container { gap: 20px; }
-  .feedback-form input {
+  .feedback-request-form-inputs-container { gap: 20px; }
+  .feedback-request-form input {
     font-size: 14px;
     &::placeholder { font-size: 14px; }
   }
-  .feedback-title {
+  .feedback-request-title {
     font-size: 24px;
     margin-bottom: 20px;
   }
-  .feedback-form-consent input {
+  .feedback-request-form-consent input {
     width: 20px;
     height: 20px;
   }
@@ -110,27 +131,28 @@
 
 /* Планшеты портрет */
 @media (min-width: 577px) and (max-width: 768px) {
-  .feedback-form button {font-size: 18px; }
-  .feedback-title { font-size: 24px; }
-  .feedback-subtitle { font-size: 16px; }
-  .feedback-form input {
+  .feedback-request-form button {font-size: 18px; }
+  .feedback-request-title { font-size: 24px; }
+  .feedback-request-form-input-error { font-size: 16px; }
+  .feedback-request-subtitle { font-size: 16px; }
+  .feedback-request-form input {
     font-size: 16px;
     &::placeholder { font-size: 16px; }
   }
-  .feedback-form { margin-bottom: 60px; }
+  .feedback-request-form { margin-bottom: 60px; }
 }
 
 /* Планшеты альбом / малые ноуты */
 @media (min-width: 769px) and (max-width: 992px) {
-  .feedback-form button { font-size: 20px; }
-  .feedback-title { font-size: 36px; }
-  .feedback-subtitle { font-size: 24px; }
-  .feedback-form { margin-bottom: 80px; }
+  .feedback-request-form button { font-size: 20px; }
+  .feedback-request-title { font-size: 36px; }
+  .feedback-request-subtitle { font-size: 24px; }
+  .feedback-request-form { margin-bottom: 80px; }
 }
 
 /* Ноутбуки */
 @media (min-width: 993px) and (max-width: 1400px) {
-  .feedback-form button { font-size: 24px; }
-  .feedback-title { font-size: 36px; }
-  .feedback-subtitle { font-size: 24px; }
+  .feedback-request-form button { font-size: 24px; }
+  .feedback-request-title { font-size: 36px; }
+  .feedback-request-subtitle { font-size: 24px; }
 }

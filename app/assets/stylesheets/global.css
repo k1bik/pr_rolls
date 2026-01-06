@@ -3,6 +3,7 @@
   --secondary-green: #65BFB5;
   --gray: #606060;
   --light-gray: #f0f0f0;
+  --red: #d32f2f;
 }
 
 .hidden { display: none; }

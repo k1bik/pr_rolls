@@ -1,3 +1,7 @@
 class HomeController < ApplicationController
-  def index; end
+  def index
+    feedback_request = FeedbackRequest.new(consent: false)
+
+    render "home/index", locals: { feedback_request: }
+  end
 end

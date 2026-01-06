@@ -1,0 +1,51 @@
+<form action="<%= feedback_requests_path %>" method="post" class="feedback-request-form">
+  <h2 class="feedback-request-subtitle">Форма обратной связи</h2>
+  <h1 class="feedback-request-title">Оставить заявку</h1>
+
+  <div class="feedback-request-form-inputs-container">
+
+    <% name_errors = feedback_request.errors[:name] %>
+    <div class="feedback-request-form-input <%= "error" if name_errors.present? %>">
+      <input type="text" name="name" maxlength="<%= FeedbackRequest::MAX_STRING_LENGTH %>" placeholder="Ваше имя*" value="<%= feedback_request.name %>">
+      <% if name_errors.present? %>
+        <div class="feedback-request-form-input-error"><%= name_errors.first %></div>
+      <% end %>
+    </div>
+
+    <% phone_errors = feedback_request.errors[:phone] %>
+    <div class="feedback-request-form-input <%= "error" if phone_errors.present? %>">
+      <input type="text" name="phone" maxlength="<%= FeedbackRequest::MAX_PHONE_LENGTH %>" placeholder="Номер телефона*" value="<%= feedback_request.phone %>">
+      <% if phone_errors.present? %>
+        <div class="feedback-request-form-input-error"><%= phone_errors.first %></div>
+      <% end %>
+    </div>
+
+    <% email_errors = feedback_request.errors[:email] %>
+    <div class="feedback-request-form-input <%= "error" if email_errors.present? %>">
+      <input type="text" name="email" maxlength="<%= FeedbackRequest::MAX_STRING_LENGTH %>" placeholder="E-mail*" value="<%= feedback_request.email %>">
+      <% if email_errors.present? %>
+        <div class="feedback-request-form-input-error"><%= email_errors.first %></div>
+      <% end %>
+    </div>
+
+    <% comment_errors = feedback_request.errors[:comment] %>
+    <div class="feedback-request-form-input <%= "error" if comment_errors.present? %>">
+      <input type="text" name="comment" maxlength="<%= FeedbackRequest::MAX_STRING_LENGTH %>" placeholder="Комментарий" value="<%= feedback_request.comment %>">
+      <% if comment_errors.present? %>
+        <div class="feedback-request-form-input-error"><%= comment_errors.first %></div>
+      <% end %>
+    </div>
+
+    <div class="feedback-request-form-consent">
+      <input type="hidden" name="consent" value="0">
+      <input type="checkbox" name="consent" id="consent" value="1" <%= feedback_request.consent ? "checked" : "" %>>
+      <label for="consent">Я согласен на <a href="#">Обработку персональных данных</a></label>
+    </div>
+    <% if (consent_errors = feedback_request.errors[:consent]).present? %>
+      <div class="feedback-request-form-input-error" style="margin-top: -20px;"><%= consent_errors.first %></div>
+    <% end %>
+
+  </div>
+
+  <button type="submit">Оставить заявку</button>
+</form>
