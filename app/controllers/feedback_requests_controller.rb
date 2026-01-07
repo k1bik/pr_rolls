@@ -6,6 +6,12 @@ class FeedbackRequestsController < ApplicationController
     if feedback_request.valid?
       feedback_request.save
 
+      begin
+        FeedbackRequestMailer.send_notification(feedback_request).deliver_later
+      rescue => e
+        Rails.logger.error("Mail error: #{e.message}")
+      end
+
       render turbo_stream: [
         turbo_stream.update("modal", partial: "feedback_requests/modal"),
         turbo_stream.update("feedback-request-form", partial: "feedback_requests/form", locals: { feedback_request: FeedbackRequest.new })
