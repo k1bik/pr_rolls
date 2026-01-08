@@ -38,6 +38,8 @@ module PrRolls
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.hosts << "81bfd47f60b4.ngrok-free.app"
+
+    config.hosts << "#{ENV["APP_HOST"]}"
+    config.hosts << "www.#{ENV["APP_HOST"]}"
   end
 end

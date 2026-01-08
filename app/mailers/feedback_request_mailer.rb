@@ -5,6 +5,6 @@ class FeedbackRequestMailer < ApplicationMailer
     @email = feedback_request.email
     @comment = feedback_request.comment
 
-    mail to: "example@example.com", subject: "Новая заявка с лендинга"
+    mail to: ENV["SMTP_TO"], subject: "Новая заявка с лендинга"
   end
 end
