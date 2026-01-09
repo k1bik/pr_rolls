@@ -15,18 +15,18 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 72px 0 0 50px;
+  padding: 72px 10px 0 50px;
   align-items: flex-start;
   justify-content: center;
   height: 100%;
 }
 
 .welcome-button {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 700;
   width: fit-content;
   color: #fff;
-  padding: 30px 90px;
+  padding: 20px 90px;
   border-radius: 14px;
   background-color: var(--primary-green);
   transition: all 0.3s ease;
@@ -45,11 +45,11 @@
 /* Мобильные устройства */
 @media (max-width: 576px) {
   .welcome-title { font-size: 30px; }
+  .welcome-content-container { padding-left: 10px; }
   .welcome-button {
     font-size: 16px;
     padding: 18px 50px;
   }
-  .welcome-content-container { padding-left: 10px; }
 }
 
 /* Планшеты портрет */
@@ -66,7 +66,7 @@
   .welcome-title { font-size: 36px; }
   .welcome-button {
     font-size: 24px;
-    padding: 24px 80px;
+    padding: 20px 80px;
   }
 }
 
@@ -75,6 +75,6 @@
   .welcome-title { font-size: 48px; }
   .welcome-button {
     font-size: 24px;
-    padding: 24px 80px;
+    padding: 20px 80px;
   }
 }

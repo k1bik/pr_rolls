@@ -85,22 +85,6 @@
   color: var(--gray);
 }
 
-.feedback-request-form button {
-  color: white;
-  padding: 20px 0;
-  background-color: var(--primary-green);
-  border-radius: 14px;
-  font-size: 24px;
-  transition: all 0.3s ease;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-
-  &:hover {
-    background-color: var(--secondary-green);
-  }
-}
-
 /* Мобильные устройства */
 @media (max-width: 576px) {
   .feedback-request-form-consent { font-size: 14px; }
@@ -108,7 +92,6 @@
     padding: 20px;
     margin-bottom: 50px;
   }
-  .feedback-request-form button { font-size: 16px; }
   .feedback-request-form-input-error { font-size: 14px; }
   .feedback-request-subtitle {
     font-size: 14px;
@@ -131,7 +114,6 @@
 
 /* Планшеты портрет */
 @media (min-width: 577px) and (max-width: 768px) {
-  .feedback-request-form button {font-size: 18px; }
   .feedback-request-title { font-size: 24px; }
   .feedback-request-form-input-error { font-size: 16px; }
   .feedback-request-subtitle { font-size: 16px; }
@@ -144,7 +126,6 @@
 
 /* Планшеты альбом / малые ноуты */
 @media (min-width: 769px) and (max-width: 992px) {
-  .feedback-request-form button { font-size: 20px; }
   .feedback-request-title { font-size: 36px; }
   .feedback-request-subtitle { font-size: 24px; }
   .feedback-request-form { margin-bottom: 80px; }
@@ -152,7 +133,6 @@
 
 /* Ноутбуки */
 @media (min-width: 993px) and (max-width: 1400px) {
-  .feedback-request-form button { font-size: 24px; }
   .feedback-request-title { font-size: 36px; }
   .feedback-request-subtitle { font-size: 24px; }
 }
