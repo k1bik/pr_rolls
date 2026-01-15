@@ -18,6 +18,7 @@
     </a>
   </div>
   <div class="header-block header-desktop-nav-container">
+    <a href="#about" data-controller="scroll-to" class="header-text">О нас</a>
     <a href="#equipment" data-controller="scroll-to" class="header-text">Оборудование</a>
     <a href="#services" data-controller="scroll-to" class="header-text">Услуги</a>
     <a href="#contacts" data-controller="scroll-to" class="header-text">Контакты</a>
@@ -47,6 +48,7 @@
       <button type="button" data-action="dropdown#toggle click@window->dropdown#hide" class="header-mobile-dropdown-menu-close-button">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" style="width:48px;height:48px" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
       </button>
+      <a href="#about" data-controller="scroll-to" class="header-text">О нас</a>
       <a href="#equipment" data-controller="scroll-to" class="header-text">Оборудование</a>
       <a href="#services" data-controller="scroll-to" class="header-text">Услуги</a>
       <a href="#contacts" data-controller="scroll-to" class="header-text">Контакты</a>
@@ -65,7 +67,7 @@
 </section>
 
 <main class="main-container">
-  <div data-appear-target="item" class="fade-in">
+  <div id="about" data-appear-target="item" class="fade-in">
     <h1 class="title">О нас</h1>
     <section class="about-container">
       <div class="about-item">
