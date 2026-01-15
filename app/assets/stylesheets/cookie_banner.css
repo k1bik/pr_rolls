@@ -26,8 +26,10 @@
   button {
     font-size: 20px;
     font-weight: 700;
+    width: 100%;
+    text-align: center;
     color: #fff;
-    padding: 16px 60px;
+    padding: 16px 0;
     border-radius: 14px;
     transition: all 0.3s ease;
   }
@@ -35,8 +37,9 @@
 
 .cookie-banner-buttons-container {
   display: flex;
+  width: 100%;
   justify-content: space-between;
-  gap: 4px;
+  gap: 8px;
 }
 
 .cookie-banner-close-button {
@@ -63,10 +66,7 @@
     border-top-right-radius: 14px;
     padding: 40px;
 
-    button {
-      font-size: 14px;
-      padding: 16px 30px;
-    }
+    button { font-size: 14px; }
   }
 }
 
@@ -78,10 +78,7 @@
     border-top-right-radius: 14px;
     padding: 40px 80px;
 
-    button {
-      font-size: 14px;
-      padding: 16px 60px;
-    }
+    button { font-size: 14px; }
   }
 }
 
@@ -91,10 +88,7 @@
     max-width: 500px;
     padding: 40px;
 
-    button {
-      font-size: 16px;
-      padding: 16px 50px;
-    }
+    button { font-size: 16px; }
   }
 }
 
@@ -104,9 +98,6 @@
     max-width: 550px;
     padding: 45px;
 
-    button {
-      font-size: 18px;
-      padding: 16px 60px;
-    }
+    button { font-size: 18px; }
   }
 }
