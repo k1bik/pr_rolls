@@ -69,7 +69,9 @@ Rails.application.configure do
     address: ENV["SMTP_ADDRESS"],
     port: ENV["SMTP_PORT"],
     authentication: :login,
-    ssl: true
+    ssl: true,
+    open_timeout: 10,
+    read_timeout: 10
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

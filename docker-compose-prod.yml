@@ -1,6 +1,11 @@
 services:
   web:
     build: .
+    dns:
+      - 2001:4860:4860::8888
+      - 2001:4860:4860::8844
+      - 8.8.8.8
+      - 8.8.4.4
     environment:
       - RAILS_ENV=production
       - DATABASE_URL=${DATABASE_URL}
@@ -17,6 +22,8 @@ services:
       - rails_log:/rails/log
     depends_on:
       - postgresql
+    networks:
+      - app_network
 
   postgresql:
     image: postgres:16.1
@@ -27,6 +34,8 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
     volumes:
       - dbdata:/var/lib/postgresql/data
+    networks:
+      - app_network
 
   nginx-proxy:
     image: jwilder/nginx-proxy
@@ -39,6 +48,8 @@ services:
       - certs:/etc/nginx/certs:rw
       - html:/usr/share/nginx/html
     restart: always
+    networks:
+      - app_network
 
   letsencrypt:
     image: nginxproxy/acme-companion
@@ -54,6 +65,16 @@ services:
       - DEFAULT_EMAIL=${LETSENCRYPT_EMAIL}
       - NGINX_PROXY_CONTAINER=nginx-proxy
     restart: always
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    enable_ipv6: true
+    ipam:
+      config:
+        - subnet: "172.28.0.0/16"
+        - subnet: "fd00:dead:beef::/48"
 
 volumes:
   dbdata:
