@@ -60,6 +60,7 @@
 
   &.white { color: white; }
   &.gray { color: var(--gray); }
+  &.bold { font-weight: 600; }
 }
 
 .resizable-svg {

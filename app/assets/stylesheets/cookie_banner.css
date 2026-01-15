@@ -1,0 +1,112 @@
+.cookie-banner-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  padding: 50px;
+  max-width: 600px;
+  border-top-left-radius: 14px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+
+  &.text { line-height: 1.2; }
+  a {
+    color: var(--primary-green);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--secondary-green);
+    }
+  }
+
+  button {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    padding: 16px 60px;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+  }
+}
+
+.cookie-banner-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.cookie-banner-close-button {
+  background-color: var(--gray);
+
+  &:hover {
+    background-color: #808080;
+  }
+}
+
+.cookie-banner-accept-button {
+  background-color: var(--primary-green);
+
+  &:hover {
+    background-color: var(--secondary-green);
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 576px) {
+  .cookie-banner-container {
+    width: 100%;
+    max-width: none;
+    border-top-right-radius: 14px;
+    padding: 40px;
+
+    button {
+      font-size: 14px;
+      padding: 16px 30px;
+    }
+  }
+}
+
+/* Планшеты портрет */
+@media (min-width: 577px) and (max-width: 768px) {
+  .cookie-banner-container {
+    width: 100%;
+    max-width: none;
+    border-top-right-radius: 14px;
+    padding: 40px 80px;
+
+    button {
+      font-size: 14px;
+      padding: 16px 60px;
+    }
+  }
+}
+
+/* Планшеты альбом / малые ноуты */
+@media (min-width: 769px) and (max-width: 992px) {
+  .cookie-banner-container {
+    max-width: 500px;
+    padding: 40px;
+
+    button {
+      font-size: 16px;
+      padding: 16px 50px;
+    }
+  }
+}
+
+/* Ноутбуки */
+@media (min-width: 993px) and (max-width: 1400px) {
+  .cookie-banner-container {
+    max-width: 550px;
+    padding: 45px;
+
+    button {
+      font-size: 18px;
+      padding: 16px 60px;
+    }
+  }
+}
