@@ -1,6 +1,9 @@
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      network: host
     environment:
       - RAILS_ENV=production
       - DATABASE_URL=${DATABASE_URL}
@@ -10,6 +13,8 @@ services:
       - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
     expose:
       - "3000"
+    env_file:
+      - .env
     volumes:
       - rails_tmp:/rails/tmp
       - rails_log:/rails/log
