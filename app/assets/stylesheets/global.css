@@ -50,6 +50,7 @@
   margin: 25px 0;
 
   &.white { background-color: white; }
+  &.gray { background-color: var(--gray); }
 }
 
 .text {
