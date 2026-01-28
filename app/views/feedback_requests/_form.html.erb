@@ -39,7 +39,7 @@
     <div class="feedback-request-form-consent">
       <input type="hidden" name="consent" value="0">
       <input type="checkbox" name="consent" id="consent" value="1" <%= feedback_request.consent ? "checked" : "" %>>
-      <label for="consent">Я согласен на <a href="/personal_data_processing_policy.pdf" target="_blank">Обработку персональных данных</a></label>
+      <label for="consent">Я даю согласие на <a href="/personal_data_processing_policy.pdf" target="_blank">Обработку персональных данных</a> и подтверждаю ознакомление с <a href="/privacy_policy.pdf" target="_blank">Политикой конфиденциальности</a></label>
     </div>
     <% if (consent_errors = feedback_request.errors[:consent]).present? %>
       <div class="feedback-request-form-input-error" style="margin-top: -20px;"><%= consent_errors.first %></div>

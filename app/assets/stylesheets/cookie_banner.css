@@ -1,10 +1,11 @@
 .cookie-banner-container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: row;
+  gap: 40px;
   background-color: #fff;
   padding: 50px;
-  max-width: 600px;
+  width: 100%;
+  align-items: center;
   border-top-left-radius: 14px;
   position: fixed;
   bottom: 0;
@@ -26,27 +27,13 @@
   button {
     font-size: 20px;
     font-weight: 700;
-    width: 100%;
+    min-width: 180px;
+    height: fit-content;
     text-align: center;
     color: #fff;
     padding: 16px 0;
     border-radius: 14px;
     transition: all 0.3s ease;
-  }
-}
-
-.cookie-banner-buttons-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.cookie-banner-close-button {
-  background-color: var(--gray);
-
-  &:hover {
-    background-color: #808080;
   }
 }
 
@@ -61,31 +48,38 @@
 /* Мобильные устройства */
 @media (max-width: 576px) {
   .cookie-banner-container {
-    width: 100%;
-    max-width: none;
     border-top-right-radius: 14px;
     padding: 40px;
+    gap: 20px;
+    flex-direction: column;
 
-    button { font-size: 14px; }
+    button {
+      font-size: 14px;
+      padding: 12px 0;
+      min-width: 100%;
+    }
   }
 }
 
 /* Планшеты портрет */
 @media (min-width: 577px) and (max-width: 768px) {
   .cookie-banner-container {
-    width: 100%;
-    max-width: none;
     border-top-right-radius: 14px;
-    padding: 40px 80px;
+    padding: 40px;
+    gap: 20px;
+    flex-direction: column;
 
-    button { font-size: 14px; }
+    button {
+      font-size: 14px;
+      min-width: 100%;
+      padding: 12px 0;
+    }
   }
 }
 
 /* Планшеты альбом / малые ноуты */
 @media (min-width: 769px) and (max-width: 992px) {
   .cookie-banner-container {
-    max-width: 500px;
     padding: 40px;
 
     button { font-size: 16px; }
@@ -95,7 +89,6 @@
 /* Ноутбуки */
 @media (min-width: 993px) and (max-width: 1400px) {
   .cookie-banner-container {
-    max-width: 550px;
     padding: 45px;
 
     button { font-size: 18px; }
