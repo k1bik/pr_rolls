@@ -1,6 +1,6 @@
 services:
   web:
-    build: .
+    image: prrolls-web
     dns:
       - 2001:4860:4860::8888
       - 2001:4860:4860::8844

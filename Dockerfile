@@ -3,8 +3,8 @@ FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 
 WORKDIR /rails
 
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libvips postgresql-client libpq5 && \
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y curl postgresql-client libpq5 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 ENV RAILS_ENV="production" \
@@ -14,7 +14,7 @@ ENV RAILS_ENV="production" \
 
 FROM base AS build
 
-RUN apt-get update -qq && \
+RUN apt-get update && \
     apt-get install --no-install-recommends -y build-essential git libpq-dev libyaml-dev pkg-config && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
