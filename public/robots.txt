@@ -1,1 +1,11 @@
-# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+# robots.txt для https://prrolls.ru
+# Рекомендации: https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Служебный эндпоинт проверки здоровья приложения — не для индексации
+Disallow: /up
+
+# Файл карты сайта (полный URL по рекомендациям Google и Яндекса)
+Sitemap: https://prrolls.ru/sitemap.xml

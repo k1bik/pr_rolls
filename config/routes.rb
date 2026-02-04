@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
+  get "sitemap.xml", to: "sitemap#show", format: "xml", as: :sitemap
+
   resources :feedback_requests, only: [:create]
 end
