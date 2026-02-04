@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
-    <title><%= "PrRollsRus" %></title>
-    <meta name="description" content="Сервис и ремонт вращающихся элементов оборудования ЦБП без демонтажа. Восстановление поверхностей бандажей и опорных роликов">
+    <meta charset="utf-8">
+    <title><%= content_for?(:title) ? yield(:title) : "Ремонт оборудования ЦБП без демонтажа — сервис бандажей и роликов | PrRollsRus" %></title>
+    <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : "Сервис и ремонт вращающихся элементов оборудования ЦБП без демонтажа. Восстановление поверхностей бандажей и опорных роликов. Выезд на объект." %>">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="<%= request.base_url + request.path %>">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <%# Open Graph %>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<%= content_for?(:og_title) ? yield(:og_title) : "Ремонт оборудования ЦБП без демонтажа — PrRollsRus" %>">
+    <meta property="og:description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : "Сервис и ремонт вращающихся элементов оборудования ЦБП без демонтажа. Восстановление бандажей и опорных роликов." %>">
+    <meta property="og:url" content="<%= request.base_url + request.path %>">
+    <meta property="og:locale" content="ru_RU">
+    <%# Twitter Card %>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= content_for?(:og_title) ? yield(:og_title) : "Ремонт оборудования ЦБП без демонтажа — PrRollsRus" %>">
+    <meta name="twitter:description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : "Сервис и ремонт вращающихся элементов оборудования ЦБП без демонтажа." %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= yield :head %>
 
+    <link rel="icon" href="<%= asset_path("favicon.svg") %>" type="image/svg+xml">
     <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "reset", "data-turbo-track": "reload" %>
@@ -31,7 +44,6 @@
     <%= stylesheet_link_tag "modal", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "cookie_banner", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= favicon_link_tag "favicon.svg" %>
   </head>
 
   <body data-controller="appear">

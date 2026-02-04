@@ -1,292 +1,312 @@
-<div data-controller="cookie-banner" class="cookie-banner-container text fade-in">
+<% content_for :head do %>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ООО ПР РОЛЛС РУС",
+      "alternateName": "PrRollsRus",
+      "description": "Сервис и ремонт вращающихся элементов оборудования ЦБП без демонтажа. Восстановление поверхностей бандажей и опорных роликов.",
+      "url": "<%= request.base_url %>",
+      "email": "info@prrolls.ru",
+      "telephone": "+7-921-358-14-93",
+      "address": { "@type": "PostalAddress", "addressCountry": "RU" },
+      "taxID": "7814810536",
+      "sameAs": ["https://t.me/+79213581493"],
+      "areaServed": { "@type": "Country", "name": "Россия" },
+      "serviceType": ["Ремонт оборудования ЦБП", "Восстановление бандажей и роликов", "Нанесение покрытий на валы"]
+    }
+  </script>
+<% end %>
+
+<div data-controller="cookie-banner" class="cookie-banner-container text fade-in" role="dialog" aria-label="Уведомление об использовании cookie">
   <p>
-    Нажимая кнопку принять или продолжая пользоваться сайтом, вы соглашаетесь с правилами пользования Куки (cookie) на условиях, изложенных в <a href="/privacy_policy.pdf" target="_blank">Политике конфиденциальности</a> и <a href="/personal_data_processing_policy.pdf" target="_blank">Согласии на обработку персональных данных</a>.
+    Нажимая кнопку принять или продолжая пользоваться сайтом, вы соглашаетесь с правилами пользования Куки (cookie) на условиях, изложенных в <a href="/privacy_policy.pdf" target="_blank" rel="noopener noreferrer">Политике конфиденциальности</a> и <a href="/personal_data_processing_policy.pdf" target="_blank" rel="noopener noreferrer">Согласии на обработку персональных данных</a>.
   </p>
 
   <button type="button" class="cookie-banner-accept-button" data-action="click->cookie-banner#close">Принять</button>
 </div>
 
-<header class="header-desktop-container">
+<header class="header-desktop-container" role="banner">
   <div class="header-block header-desktop-logo-container">
-    <a href="#welcome" data-controller="scroll-to">
-      <img src="<%= asset_path("logo_with_text.svg") %>" alt="logo" class="header-desktop-logo-with-text">
-      <img src="<%= asset_path("logo.svg") %>" alt="logo" class="header-desktop-logo-icon">
+    <a href="#welcome" data-controller="scroll-to" aria-label="На главную — PrRollsRus">
+      <img src="<%= asset_path("logo_with_text.svg") %>" alt="PrRollsRus — сервис и ремонт оборудования ЦБП" class="header-desktop-logo-with-text">
+      <img src="<%= asset_path("logo.svg") %>" alt="" class="header-desktop-logo-icon">
     </a>
   </div>
-  <div class="header-block header-desktop-nav-container">
+  <nav class="header-block header-desktop-nav-container" aria-label="Основное меню">
     <a href="#about" data-controller="scroll-to" class="header-text">О нас</a>
     <a href="#equipment" data-controller="scroll-to" class="header-text">Оборудование</a>
     <a href="#services" data-controller="scroll-to" class="header-text">Услуги</a>
     <a href="#contacts" data-controller="scroll-to" class="header-text">Контакты</a>
-  </div>
+  </nav>
   <div class="header-block header-desktop-contacts-container">
-    <a class="header-contact-link telegram" href="https://t.me/+79213581493" target="_blank">
+    <a class="header-contact-link telegram" href="https://t.me/+79213581493" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
       <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="none"><path fill="#1C9080" d="M20.902 0A21 21 0 1 0 21 0h-.098Zm8.683 12.642c.175-.003.562.04.814.245a.875.875 0 0 1 .3.569c.027.162.063.535.034.832-.314 3.321-1.683 11.378-2.38 15.097-.294 1.575-.873 2.102-1.434 2.152-1.218.114-2.144-.804-3.326-1.578-1.848-1.213-2.892-1.967-4.686-3.15-2.074-1.365-.73-2.117.451-3.343.31-.322 5.683-5.21 5.788-5.652.012-.056.024-.262-.098-.371-.123-.109-.305-.072-.436-.042-.185.043-3.138 1.994-8.857 5.854-.84.577-1.6.857-2.278.84-.75-.014-2.191-.422-3.264-.77-1.316-.429-2.36-.655-2.27-1.381.047-.378.568-.765 1.563-1.16 6.121-2.667 10.204-4.425 12.247-5.275 5.83-2.425 7.043-2.847 7.832-2.861Z"/></svg>
     </a>
-    <a class="header-contact-link whatsapp" href="https://wa.me/79213581493" target="_blank">
+    <a class="header-contact-link whatsapp" href="https://wa.me/79213581493" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp">
       <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" fill="none"><path fill="#1C9080" d="M21.487 0A21.18 21.18 0 0 1 36.56 6.25a21.179 21.179 0 0 1 6.236 15.073c-.006 11.75-9.566 21.308-21.309 21.308h-.008a21.323 21.323 0 0 1-10.183-2.594L0 43l3.024-11.042A21.276 21.276 0 0 1 .18 21.307C.184 9.559 9.743 0 21.487 0Zm-7.545 11.467c-.354 0-.931.133-1.419.667a11.23 11.23 0 0 1-.103.111c-.554.591-1.76 1.877-1.76 4.33 0 2.589 1.863 5.091 2.163 5.494l.01.013.089.126c.625.898 4.004 5.754 9.008 7.914 1.27.548 2.26.876 3.035 1.12 1.276.406 2.437.35 3.352.211 1.023-.152 3.15-1.289 3.594-2.532.444-1.243.444-2.31.31-2.531-.107-.18-.358-.3-.73-.48-.09-.044-.187-.09-.29-.142-.533-.268-3.15-1.554-3.637-1.733-.488-.177-.843-.265-1.2.269-.353.532-1.374 1.73-1.684 2.086-.31.356-.622.4-1.154.134a7.686 7.686 0 0 0-.361-.164 13.778 13.778 0 0 1-3.92-2.48c-1.583-1.41-2.653-3.154-2.963-3.688-.31-.532-.032-.82.234-1.086.161-.16.348-.387.533-.612.09-.109.179-.218.265-.32.224-.261.323-.462.456-.733.025-.05.05-.102.079-.157.177-.354.089-.665-.045-.931-.093-.184-.625-1.481-1.092-2.62a391.04 391.04 0 0 0-.55-1.335c-.382-.913-.768-.913-1.077-.912-.042 0-.082 0-.121-.002-.34-.013-.681-.019-1.022-.017Z"/></svg>
     </a>
-    <a class="header-contact-link phone" href="tel:+79213581493" target="_blank">
+    <a class="header-contact-link phone" href="tel:+79213581493" aria-label="Позвонить">
       <p class="header-text">+7 921 358-14-93</p>
     </a>
   </div>
 </header>
 
-<header class="header-mobile-container">
-  <a href="#welcome" data-controller="scroll-to">
-    <img src="<%= asset_path("logo_with_text.svg") %>" alt="logo">
+<header class="header-mobile-container" role="banner">
+  <a href="#welcome" data-controller="scroll-to" aria-label="На главную — PrRollsRus">
+    <img src="<%= asset_path("logo_with_text.svg") %>" alt="PrRollsRus">
   </a>
   <div data-controller="dropdown">
-    <button type="button" data-action="dropdown#toggle click@window->dropdown#hide" class="header-mobile-dropdown-menu-open-button">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" style="width:48px;height:48px" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+    <button type="button" data-action="dropdown#toggle click@window->dropdown#hide" class="header-mobile-dropdown-menu-open-button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" style="width:48px;height:48px" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
     </button>
-    <div data-dropdown-target="menu" class="hidden header-mobile-dropdown-menu">
-      <button type="button" data-action="dropdown#toggle click@window->dropdown#hide" class="header-mobile-dropdown-menu-close-button">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" style="width:48px;height:48px" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+    <nav id="mobile-nav-menu" data-dropdown-target="menu" class="hidden header-mobile-dropdown-menu" aria-label="Основное меню">
+      <button type="button" data-action="dropdown#toggle click@window->dropdown#hide" class="header-mobile-dropdown-menu-close-button" aria-label="Закрыть меню">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" style="width:48px;height:48px" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
       </button>
       <a href="#about" data-controller="scroll-to" class="header-text">О нас</a>
       <a href="#equipment" data-controller="scroll-to" class="header-text">Оборудование</a>
       <a href="#services" data-controller="scroll-to" class="header-text">Услуги</a>
       <a href="#contacts" data-controller="scroll-to" class="header-text">Контакты</a>
-    </div>
+    </nav>
   </div>
 </header>
 
-<section id="welcome" class="welcome-container">
-  <div class="welcome-content-container">
-    <h1 class="welcome-title">
-      <span>Сервис и ремонт вращающихся элементов оборудования ЦБП без демонтажа</span>
-      <span>Восстановление поверхностей бандажей и опорных роликов</span>
-    </h1>
-    <a href="#feedback-request-form" data-controller="scroll-to" class="welcome-button">Оставить заявку</a>
-  </div>
-</section>
+<main id="main-content" class="main-wrapper" role="main">
+  <section id="welcome" class="welcome-container" aria-labelledby="welcome-heading">
+    <div class="welcome-content-container">
+      <h1 id="welcome-heading" class="welcome-title">
+        <span>Сервис и ремонт вращающихся элементов оборудования ЦБП без демонтажа</span>
+        <span>Восстановление поверхностей бандажей и опорных роликов</span>
+      </h1>
+      <a href="#feedback-request-form" data-controller="scroll-to" class="welcome-button">Оставить заявку</a>
+    </div>
+  </section>
 
-<main class="main-container">
-  <div id="about" data-appear-target="item" class="fade-in">
-    <h1 class="title">О нас</h1>
-    <section class="about-container">
-      <div class="about-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"><path fill="#000" d="M30.044.013c2.397-.034 4.73 0 6.996.103l2.244.127.421.028.033.422c.214 2.884.296 5.923.25 9.117a66.66 66.66 0 0 1-.776 9.327c-.472 3.018-1.195 5.824-2.169 8.417-.98 2.609-2.307 4.763-3.986 6.45l.002.002c-2.035 2.078-4.243 3.603-6.623 4.563v.002c-2.361.951-4.74 1.429-7.133 1.429-2.503 0-4.976-.491-7.414-1.47-2.443-.982-4.55-2.367-6.316-4.155a19.569 19.569 0 0 1-4.104-6.112A18.004 18.004 0 0 1 0 21.133c0-2.467.475-4.922 1.418-7.362.95-2.459 2.469-4.73 4.548-6.816l.66-.625c1.587-1.418 3.515-2.558 5.775-3.423 2.564-.983 5.348-1.7 8.348-2.151 2.992-.45 6.09-.698 9.295-.743Zm6.293 3.605c-1.996-.07-4.242-.082-6.736-.03a62.024 62.024 0 0 0-7.013.543l-1 .144c-2.664.405-5.162 1.019-7.493 1.843h-.001c-2.312.816-4.133 1.91-5.485 3.268v.002c-1.876 1.882-3.174 3.816-3.914 5.8-.753 2.021-1.122 3.886-1.122 5.597 0 2.295.457 4.432 1.366 6.416.791 1.726 1.718 3.104 2.771 4.15 1.106-2.881 2.721-5.652 4.852-8.304 2.316-2.883 5.772-5.547 9.66-8.017l1.111 1.429c-2.708 2.292-5.98 4.682-7.984 7.577-1.938 2.8-3.434 6.122-4.486 9.966a14.732 14.732 0 0 0 3.975 1.768h.002c1.547.433 3.038.648 4.474.648 1.949 0 3.88-.382 5.793-1.148 1.896-.757 3.697-2.013 5.397-3.786l.006-.006c.732-.74 1.49-1.797 2.27-3.187.765-1.363 1.44-3.165 2.015-5.419.573-2.246 1.01-4.98 1.308-8.202.287-3.103.364-6.786.234-11.052Z"/></svg>
-        <p class="text gray">
-          Мы специализируемся на сервисе и ремонте оборудования целлюлозно-бумажной промышленности, используя многолетний опыт и знания, современное оборудование и качественные материалы.
-        </p>
+  <div class="main-container">
+    <section id="about" data-appear-target="item" class="fade-in" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="title">О нас</h2>
+      <div class="about-container">
+        <div class="about-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"><path fill="#000" d="M30.044.013c2.397-.034 4.73 0 6.996.103l2.244.127.421.028.033.422c.214 2.884.296 5.923.25 9.117a66.66 66.66 0 0 1-.776 9.327c-.472 3.018-1.195 5.824-2.169 8.417-.98 2.609-2.307 4.763-3.986 6.45l.002.002c-2.035 2.078-4.243 3.603-6.623 4.563v.002c-2.361.951-4.74 1.429-7.133 1.429-2.503 0-4.976-.491-7.414-1.47-2.443-.982-4.55-2.367-6.316-4.155a19.569 19.569 0 0 1-4.104-6.112A18.004 18.004 0 0 1 0 21.133c0-2.467.475-4.922 1.418-7.362.95-2.459 2.469-4.73 4.548-6.816l.66-.625c1.587-1.418 3.515-2.558 5.775-3.423 2.564-.983 5.348-1.7 8.348-2.151 2.992-.45 6.09-.698 9.295-.743Zm6.293 3.605c-1.996-.07-4.242-.082-6.736-.03a62.024 62.024 0 0 0-7.013.543l-1 .144c-2.664.405-5.162 1.019-7.493 1.843h-.001c-2.312.816-4.133 1.91-5.485 3.268v.002c-1.876 1.882-3.174 3.816-3.914 5.8-.753 2.021-1.122 3.886-1.122 5.597 0 2.295.457 4.432 1.366 6.416.791 1.726 1.718 3.104 2.771 4.15 1.106-2.881 2.721-5.652 4.852-8.304 2.316-2.883 5.772-5.547 9.66-8.017l1.111 1.429c-2.708 2.292-5.98 4.682-7.984 7.577-1.938 2.8-3.434 6.122-4.486 9.966a14.732 14.732 0 0 0 3.975 1.768h.002c1.547.433 3.038.648 4.474.648 1.949 0 3.88-.382 5.793-1.148 1.896-.757 3.697-2.013 5.397-3.786l.006-.006c.732-.74 1.49-1.797 2.27-3.187.765-1.363 1.44-3.165 2.015-5.419.573-2.246 1.01-4.98 1.308-8.202.287-3.103.364-6.786.234-11.052Z"/></svg>
+          <p class="text gray">
+            Мы специализируемся на сервисе и ремонте оборудования целлюлозно-бумажной промышленности, используя многолетний опыт и знания, современное оборудование и качественные материалы.
+          </p>
+        </div>
+        <div class="about-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"><path fill="#000" d="M20 36c8.84 0 16-7.16 16-16S28.84 4 20 4 4 11.16 4 20s7.16 16 16 16Zm0-36c11 0 20 9 20 20s-9 20-20 20C8.94 40 0 31 0 20S9 0 20 0Zm1 22h-3V10h3v8.52l7.4-4.26 1.5 2.6L21 22Z"/></svg>
+          <p class="text gray">
+            Правильный выбор покрытий и методов восстановления поверхностей может значительно увеличить срок службы валов и цилиндров, что ведет к росту производительности, лучшему качеству выпускаемой продукции, снижает простои.
+          </p>
+        </div>
+        <div class="about-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"><path fill="#000" d="M6.723 40.014H0V21.416h6.723v18.598Zm16.806 0h-6.722V12.963h6.722v27.05Zm16.809-.001h-6.723V0h6.723v40.013Z"/></svg>
+          <p class="text gray">
+            Выполнение работ по восстановлению поверхностей осуществляется без демонтажа элементов оборудования по месту установки, что существенно сокращает сроки выполнения работ.
+          </p>
+        </div>
       </div>
-      <div class="about-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"><path fill="#000" d="M20 36c8.84 0 16-7.16 16-16S28.84 4 20 4 4 11.16 4 20s7.16 16 16 16Zm0-36c11 0 20 9 20 20s-9 20-20 20C8.94 40 0 31 0 20S9 0 20 0Zm1 22h-3V10h3v8.52l7.4-4.26 1.5 2.6L21 22Z"/></svg>
-        <p class="text gray">
-          Правильный выбор покрытий и методов восстановления поверхностей может значительно увеличить срок службы валов и цилиндров, что ведет к росту производительности, лучшему качеству выпускаемой продукции, снижает простои.
-        </p>
-      </div>
-      <div class="about-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"><path fill="#000" d="M6.723 40.014H0V21.416h6.723v18.598Zm16.806 0h-6.722V12.963h6.722v27.05Zm16.809-.001h-6.723V0h6.723v40.013Z"/></svg>
-        <p class="text gray">
-          Выполнение работ по восстановлению поверхностей осуществляется без демонтажа элементов оборудования по месту установки, что существенно сокращает сроки выполнения работ.
-        </p>
+    </section>
+    <section data-appear-target="item" class="fade-in" aria-labelledby="clients-heading">
+      <h2 id="clients-heading" class="title">Нам доверяют</h2>
+      <div class="splide" data-controller="splide">
+        <div class="splide__track">
+          <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="<%= asset_path("slpk.png") %>" alt="Логотип СЛПК" loading="lazy">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("knauf.png") %>" alt="Логотип Knauf" loading="lazy">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("kama.png") %>" alt="Логотип Кама" loading="lazy" style="max-height: 50px">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("segezha.png") %>" alt="Логотип Сегежа" loading="lazy" style="max-height: 100px">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("albertin.png") %>" alt="Логотип Albertin" loading="lazy" style="max-height: 100px">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("pcbk.png") %>" alt="Логотип ПЦБК" loading="lazy">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("kartontol.png") %>" alt="Логотип Картон Толь" loading="lazy">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("bkf.jpg") %>" alt="Логотип БКФ" loading="lazy">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("yarbumaga.png") %>" alt="Логотип Ярбумага" loading="lazy" style="max-height: 70px">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("kommunar.png") %>" alt="Логотип Коммунар" loading="lazy">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("ppg.png") %>" alt="Логотип PPG" loading="lazy">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("kamenskaya-bkf.png") %>" alt="Логотип Каменская БКФ" loading="lazy" style="max-height: 70px">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("ultradccor.png") %>" alt="Логотип Ultradccor" loading="lazy" style="max-height: 70px">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("akb.png") %>" alt="Логотип АКБ" loading="lazy" style="max-height: 70px">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("tbf.png") %>" alt="Логотип ТБФ" loading="lazy">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("nikolpack.png") %>" alt="Логотип Николпак" loading="lazy">
+          </li>
+          <li class="splide__slide">
+            <img src="<%= asset_path("kapparus.png") %>" alt="Логотип Kapparus" loading="lazy">
+          </li>
+          </ul>
+        </div>
       </div>
     </section>
   </div>
-  <div data-appear-target="item" class="fade-in">
-    <h1 class="title">Нам доверяют</h1>
-    <div class="splide" data-controller="splide">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <img src="<%= asset_path("slpk.png") %>" alt="slpk" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("knauf.png") %>" alt="knauf" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("kama.png") %>" alt="kama" style="max-height: 50px" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("segezha.png") %>" alt="segezha" style="max-height: 100px" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("albertin.png") %>" alt="albertin" style="max-height: 100px" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("pcbk.png") %>" alt="pcbk" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("kartontol.png") %>" alt="kartontol" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("bkf.jpg") %>" alt="bkf" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("yarbumaga.png") %>" alt="yarbumaga" style="max-height: 70px" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("kommunar.png") %>" alt="kommunar" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("ppg.png") %>" alt="ppg" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("kamenskaya-bkf.png") %>" alt="kamenskaya-bkf" style="max-height: 70px" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("ultradccor.png") %>" alt="ultradccor" style="max-height: 70px" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("akb.png") %>" alt="akb" style="max-height: 70px" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("tbf.png") %>" alt="tbf" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("nikolpack.png") %>" alt="nikolpack" loading="lazy">
-          </li>
-          <li class="splide__slide">
-            <img src="<%= asset_path("kapparus.png") %>" alt="kapparus" loading="lazy">
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</main>
-<section id="equipment" class="equipment-container">
-  <main class="main-container">
+
+  <section id="equipment" class="equipment-container" aria-labelledby="equipment-heading">
+    <div class="main-container">
     <div data-appear-target="item" class="fade-in">
-      <h1 class="title white">Виды ремонтируемого оборудования:</h1>
-      <h2 class="subtitle white bold">DD-промыватели</h2>
-      <img src="<%= asset_path("dd-washer.webp") %>" alt="dd-washer" loading="lazy" class="image">
+      <h2 id="equipment-heading" class="title white">Виды ремонтируемого оборудования</h2>
+      <h3 class="subtitle white bold">DD-промыватели</h3>
+      <img src="<%= asset_path("dd-washer.webp") %>" alt="DD-промыватель для целлюлозно-бумажного производства" loading="lazy" class="image" width="800" height="450">
       <div class="divider white"></div>
-      <p class="text white">
-        Мы выполняем комплекс работ по ремонту и обслуживанию DD-промывателей:<br><br>
-        <ul class="text white">
-          <li>— Экспертная  оценка и консультации по дальнейшей эксплуатации оборудования;</li>
-          <li>— Поставка и замена уплотнений;</li>
-          <li>— Ремонт внутренних и внешних уплотнительных поверхностей;</li>
-          <li>— Техническое обслуживание оборудования один раз в 2 года.</li>
-        </ul>
-      </p>
+      <p class="text white">Мы выполняем комплекс работ по ремонту и обслуживанию DD-промывателей:</p>
+      <ul class="text white">
+        <li>Экспертная оценка и консультации по дальнейшей эксплуатации оборудования;</li>
+        <li>Поставка и замена уплотнений;</li>
+        <li>Ремонт внутренних и внешних уплотнительных поверхностей;</li>
+        <li>Техническое обслуживание оборудования один раз в 2 года.</li>
+      </ul>
     </div>
     <div data-appear-target="item" class="fade-in">
-      <h2 class="subtitle white bold">Валы, цилиндры БДМ и КДМ</h2>
-      <img src="<%= asset_path("shafts-and-cylinders.webp") %>" alt="shafts-and-cylinders" loading="lazy" class="image">
+      <h3 class="subtitle white bold">Валы, цилиндры БДМ и КДМ</h3>
+      <img src="<%= asset_path("shafts-and-cylinders.webp") %>" alt="Валы и цилиндры бумагоделательных и картоноделательных машин" loading="lazy" class="image" width="800" height="450">
       <div class="divider white"></div>
-      <p class="text white">
-        Восстановление поверхностей:<br><br>
-        <ul class="text white">
-          <li>— Механическая обработка поверхностей валов и цилиндров (шлифовка, проточка);</li>
-          <li>— Нанесение защитных покрытий на поверхности валов и цилиндров.</li>
-        </ul>
-      </p>
+      <p class="text white">Восстановление поверхностей:</p>
+      <ul class="text white">
+        <li>Механическая обработка поверхностей валов и цилиндров (шлифовка, проточка);</li>
+        <li>Нанесение защитных покрытий на поверхности валов и цилиндров.</li>
+      </ul>
     </div>
     <div data-appear-target="item" class="fade-in">
-      <h2 class="subtitle white bold">Бандажи и опорные ролики вращающихся печей и барабанов</h2>
-      <img src="<%= asset_path("bandages-and-support-rollers.webp") %>" alt="bandages-and-support-rollers" loading="lazy" class="image">
+      <h3 class="subtitle white bold">Бандажи и опорные ролики вращающихся печей и барабанов</h3>
+      <img src="<%= asset_path("bandages-and-support-rollers.webp") %>" alt="Бандажи и опорные ролики вращающихся печей" loading="lazy" class="image" width="800" height="450">
       <div class="divider white"></div>
       <ul class="text white">
-        <li>— Механическая обработка методом шлифовки/наплавки бандажей и опорных/упорных роликов вращающихся печей и барабанов, а также торцевых поверхностей бандажей.</li>
+        <li>Механическая обработка методом шлифовки и наплавки бандажей и опорных роликов вращающихся печей и барабанов, торцевых поверхностей бандажей.</li>
       </ul>
     </div>
     <div data-appear-target="item" class="fade-in">
-      <h2 class="subtitle white bold">Цапфы и посадочные места элементов вращающегося оборудования</h2>
-      <img src="<%= asset_path("trunnions.webp") %>" alt="trunnions" loading="lazy" class="image">
+      <h3 class="subtitle white bold">Цапфы и посадочные места элементов вращающегося оборудования</h3>
+      <img src="<%= asset_path("trunnions.webp") %>" alt="Цапфы вращающегося оборудования" loading="lazy" class="image" width="800" height="450">
       <div class="divider white"></div>
       <ul class="text white">
-        <li>— Механическая обработка (наплавка, проточка, шлифовка);</li>
-        <li>— Нанесение покрытия.</li>
+        <li>Механическая обработка (наплавка, проточка, шлифовка);</li>
+        <li>Нанесение покрытия.</li>
       </ul>
     </div>
-  </main>
-</section>
-<main class="main-container" id="services">
-  <div data-appear-target="item" class="fade-in">
-    <h1 class="title">Виды выполняемых работ:</h1>
-    <h2 class="subtitle bold">Механическая обработка</h2>
-    <img src="<%= asset_path("mechanical-processing.webp") %>" alt="mechanical-processing" loading="lazy" class="image">
-    <div class="divider"></div>
-    <ul class="text">
-      <li>— Устранение дефектов на поверхности вала;</li>
-      <li>— Достижение точных размеров и правильной геометрии вала;</li>
-      <li>— Получение минимальной шероховатости поверхности вала;</li>
-      <li>— Уменьшение биения вала.</li>
-    </ul>
-  </div>
-  <div data-appear-target="item" class="fade-in">
-    <h2 class="subtitle bold">Нанесение покрытий</h2>
-    <img src="<%= asset_path("coating-application.webp") %>" alt="coating-application" loading="lazy" class="image">
-    <div class="divider"></div>
-    <p class="text">
-      <span class="text bold">Виды покрытий:</span><br>
-      <ul class="text">
-        <li>— TecnoClean/TecnoClean + шлифовка — антиадгезионное;</li>
-        <li>— TecnoCleanCera Hybrid — усиленная защита;</li>
-        <li>— TecnoGuide — антикоррозийное;</li>
-        <li>— TecnoGuide HT — антикоррозийное  + антиадгезионное;</li>
-        <li>— TecnoGrip — противоскользящее;</li>
-        <li>— TecnoDiamond — сверхтвёрдое,  с зеркальной поверхностью;</li>
-        <li>— TecnoMicro — PTFE (тефлоновое) покрытие.</li>
-      </ul><br><br>
-      <span class="text bold">Преимущества нанесения покрытий:</span><br>
-      <ul class="text">
-        <li>— Защита поверхности тела вала от коррозии;</li>
-        <li>— Снижение налипания;</li>
-        <li>— Повышение эксплуатационных характеристик  вала, что приводит к снижению простоев;</li>
-        <li>— Упрощение очистки поверхности;</li>
-        <li>— Устойчивость к воздействию агрессивной среды;</li>
-        <li>— Улучшение качества конечного продукта.</li>
-      </ul>
-    </p>
-  </div>
-  <div data-appear-target="item" class="fade-in">
-    <h2 class="subtitle bold">Диагностика</h2>
-    <img src="<%= asset_path("diagnostics.webp") %>" alt="diagnostics" loading="lazy" class="image">
-    <div class="divider"></div>
-    <ul class="text">
-      <li>— Измерение толщины покрытия;</li>
-      <li>— Измерение шероховатости поверхности;</li>
-      <li>— Измерение глубины механических повреждений.</li>
-    </ul>
-  </div>
-</main>
-<main class="small-container">
-  <div data-appear-target="item" class="fade-in">
-    <turbo-frame id="feedback-request-form">
-      <%= render "feedback_requests/form", feedback_request: %>
-    </turbo-frame>
-    <section id="contacts" class="contacts-container">
-      <div class="contacts-header">
-        <h1 class="subtitle bold" style="margin: 0">Контакты</h1>
-        <a class="subtitle green bold" style="margin: 0" href="mailto:info@prrolls.ru" target="_blank">
-          <span style="display: inline-flex; align-items: center; gap: 16px;">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 55 47"
-              style="height: 1em; width: auto; vertical-align: -0.1em; flex-shrink: 0;"
-              fill="none"
-            >
-              <path fill="#1C9080" stroke="#1C9080" stroke-width=".4" d="M.2 14.174v22.825c0 2.44.947 4.78 2.635 6.506A8.902 8.902 0 0 0 9.2 46.199h36c2.387 0 4.676-.97 6.364-2.694a9.305 9.305 0 0 0 2.636-6.506V9.4c0-2.44-.948-4.78-2.636-6.505A8.902 8.902 0 0 0 45.2.199h-36c-2.387 0-4.676.97-6.364 2.695A9.305 9.305 0 0 0 .2 9.399v4.775Zm9-9.375h36a4.45 4.45 0 0 1 3.181 1.348A4.652 4.652 0 0 1 49.7 9.399v3.404L27.2 25.186 4.7 12.803V9.4c0-1.22.474-2.39 1.318-3.252A4.45 4.45 0 0 1 9.2 4.799ZM4.7 18.03l21.433 11.794a2.211 2.211 0 0 0 2.133 0L49.699 18.03v18.97c0 1.22-.474 2.39-1.318 3.253a4.45 4.45 0 0 1-3.182 1.347h-36a4.45 4.45 0 0 1-3.182-1.347A4.652 4.652 0 0 1 4.7 36.999V18.03Z"/>
-            </svg>
-            info@prrolls.ru
-          </span>
-        </a>
-      </div>
+    </div>
+  </section>
+
+  <section class="main-container" id="services" aria-labelledby="services-heading">
+    <div data-appear-target="item" class="fade-in">
+      <h2 id="services-heading" class="title">Виды выполняемых работ</h2>
+      <h3 class="subtitle bold">Механическая обработка</h3>
+      <img src="<%= asset_path("mechanical-processing.webp") %>" alt="Механическая обработка валов и цилиндров" loading="lazy" class="image" width="800" height="450">
       <div class="divider"></div>
-      <div class="contacts-content">
-        <div class="contacts-item">
-          <p class="text">Генеральный директор: Гугнин Михаил Михайлович</p>
-          <a class="text" href="tel:+79213581493" target="_blank">+7 921 358-14-93</a>
+      <ul class="text">
+        <li>Устранение дефектов на поверхности вала;</li>
+        <li>Достижение точных размеров и правильной геометрии вала;</li>
+        <li>Получение минимальной шероховатости поверхности вала;</li>
+        <li>Уменьшение биения вала.</li>
+      </ul>
+    </div>
+    <div data-appear-target="item" class="fade-in">
+      <h3 class="subtitle bold">Нанесение покрытий</h3>
+      <img src="<%= asset_path("coating-application.webp") %>" alt="Нанесение защитных покрытий на валы" loading="lazy" class="image" width="800" height="450">
+      <div class="divider"></div>
+      <p class="text"><strong>Виды покрытий:</strong></p>
+      <ul class="text">
+        <li>TecnoClean / TecnoClean + шлифовка — антиадгезионное;</li>
+        <li>TecnoCleanCera Hybrid — усиленная защита;</li>
+        <li>TecnoGuide — антикоррозийное;</li>
+        <li>TecnoGuide HT — антикоррозийное и антиадгезионное;</li>
+        <li>TecnoGrip — противоскользящее;</li>
+        <li>TecnoDiamond — сверхтвёрдое с зеркальной поверхностью;</li>
+        <li>TecnoMicro — PTFE (тефлоновое) покрытие.</li>
+      </ul>
+      <p class="text"><strong>Преимущества нанесения покрытий:</strong></p>
+      <ul class="text">
+        <li>Защита поверхности тела вала от коррозии;</li>
+        <li>Снижение налипания;</li>
+        <li>Повышение эксплуатационных характеристик вала, снижение простоев;</li>
+        <li>Упрощение очистки поверхности;</li>
+        <li>Устойчивость к воздействию агрессивной среды;</li>
+        <li>Улучшение качества конечного продукта.</li>
+      </ul>
+    </div>
+    <div data-appear-target="item" class="fade-in">
+      <h3 class="subtitle bold">Диагностика</h3>
+      <img src="<%= asset_path("diagnostics.webp") %>" alt="Диагностика состояния покрытий и поверхностей" loading="lazy" class="image" width="800" height="450">
+      <div class="divider"></div>
+      <ul class="text">
+        <li>Измерение толщины покрытия;</li>
+        <li>Измерение шероховатости поверхности;</li>
+        <li>Измерение глубины механических повреждений.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="small-container">
+    <div data-appear-target="item" class="fade-in">
+      <turbo-frame id="feedback-request-form">
+        <%= render "feedback_requests/form", feedback_request: %>
+      </turbo-frame>
+      <section id="contacts" class="contacts-container" aria-labelledby="contacts-heading">
+        <div class="contacts-header">
+          <h2 id="contacts-heading" class="subtitle bold" style="margin: 0">Контакты</h2>
+          <a class="subtitle green bold" style="margin: 0" href="mailto:info@prrolls.ru">
+            <span style="display: inline-flex; align-items: center; gap: 16px;">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 55 47"
+                style="height: 1em; width: auto; vertical-align: -0.1em; flex-shrink: 0;"
+                fill="none"
+              >
+                <path fill="#1C9080" stroke="#1C9080" stroke-width=".4" d="M.2 14.174v22.825c0 2.44.947 4.78 2.635 6.506A8.902 8.902 0 0 0 9.2 46.199h36c2.387 0 4.676-.97 6.364-2.694a9.305 9.305 0 0 0 2.636-6.506V9.4c0-2.44-.948-4.78-2.636-6.505A8.902 8.902 0 0 0 45.2.199h-36c-2.387 0-4.676.97-6.364 2.695A9.305 9.305 0 0 0 .2 9.399v4.775Zm9-9.375h36a4.45 4.45 0 0 1 3.181 1.348A4.652 4.652 0 0 1 49.7 9.399v3.404L27.2 25.186 4.7 12.803V9.4c0-1.22.474-2.39 1.318-3.252A4.45 4.45 0 0 1 9.2 4.799ZM4.7 18.03l21.433 11.794a2.211 2.211 0 0 0 2.133 0L49.699 18.03v18.97c0 1.22-.474 2.39-1.318 3.253a4.45 4.45 0 0 1-3.182 1.347h-36a4.45 4.45 0 0 1-3.182-1.347A4.652 4.652 0 0 1 4.7 36.999V18.03Z"/>
+              </svg>
+              info@prrolls.ru
+            </span>
+          </a>
         </div>
-        <div class="contacts-item">
-          <p class="text">Технический специалист</p>
-          <a class="text" href="tel:+79112254463" target="_blank">+7 911 225-44-63</a>
+        <div class="divider"></div>
+        <div class="contacts-content">
+          <div class="contacts-item">
+            <p class="text">Генеральный директор: Гугнин Михаил Михайлович</p>
+            <a class="text" href="tel:+79213581493" target="_blank">+7 921 358-14-93</a>
+          </div>
+          <div class="contacts-item">
+            <p class="text">Технический специалист</p>
+            <a class="text" href="tel:+79112254463" target="_blank">+7 911 225-44-63</a>
+          </div>
+          <div class="contacts-item">
+            <p class="text">Коммерческий отдел</p>
+            <a class="text" href="tel:+79042263681" target="_blank">+7 904 226-36-81</a>
+          </div>
         </div>
-        <div class="contacts-item">
-          <p class="text">Коммерция</p>
-          <a class="text" href="tel:+79042263681" target="_blank">+7 904 226-36-81</a>
-        </div>
-      </div>
-    </section>
-  </div>
+      </section>
+    </div>
+  </section>
 </main>
-<footer class="footer-container">
-  <main class="main-container">
+
+<footer class="footer-container" role="contentinfo">
+  <div class="main-container">
     <div class="footer-grid">
       <div class="footer-item">
         <div class="footer-logo-container">
@@ -300,7 +320,7 @@
               <path fill="#fff" d="M60.14 0c33.21 0 60.139 26.928 60.139 60.14 0 33.211-26.928 60.139-60.14 60.139C26.93 120.279 0 93.351 0 60.139 0 26.93 26.928 0 60.14 0Zm6.72 17.052c-17.39-.057-30.38.028-35.46.056-4.26-.211-7.132 3.256-7.415 6.425V95.87c.68 6.41 9.071 6.383 9.977-.013V74.544c2.83-1.953 5.66-3.891 8.49-5.844v37.994c1.189 5.561 9 5.561 10.174 0v-27.82c13.952-.976 29.674 9.284 42.183 23.773 2.405-2.419 4.825-4.825 7.245-7.245a67.818 67.818 0 0 0-5.689-6.156c-7.244-6.622-11.688-9.254-19.81-14.207 5.503-3.806 10.173-7.06 13.852-9.65l.121-.084c1.26-.89 2.505-1.77 4.069-3.1 4.344-3.694 6.934-5.901 8.08-9.312 1.57-4.711-.029-10.443-3.439-14.08-3.758-3.997-8.945-4.578-10.49-4.752l-.024-.002a16.619 16.619 0 0 0-2.376-.098l-.181.004c-1.07.026-2.13.053-3.202.094-.029-2.534-.355-8.334-4.542-12.367-3.085-2.985-7.346-4.67-11.563-4.641Zm182.933 65.503c0 .042-.014.099.015.17.142.438 1.08.495 1.392.523.441.028 1.379 0 2.543-.693v-34.06h9.065v39.847h-9.065V86.46a9.169 9.169 0 0 1-2.387 1.387c-.539.212-2.458.905-4.944.495-1.193-.198-2.728-.453-3.879-1.698a5.606 5.606 0 0 1-1.151-1.996 5.12 5.12 0 0 1-.241-1.556V48.494h9.064c-.142 11.363-.27 22.712-.412 34.06Zm-112.29-43.457c2.912.141 9.974.82 11.494 4.825.199.51.327 1.118.327 1.853v10.175c-.028.41-.171 2.25-1.705 3.722-1.491 1.4-3.48 1.485-4.276 1.485v.835c2.614-.07 4.83.934 5.626 2.66.312.68.312 1.289.312 1.6-.042 2.562-.61 17.46.157 19.654a6.54 6.54 0 0 0 .781 1.543c.255.354.512.622.711.82h-8.398c-.171-.014-1.421-.099-2.145-1.131a2.642 2.642 0 0 1-.469-1.415c-.057-1.557-.099-8.802 0-18.693 0-.141 0-.65-.384-1.09-.497-.594-1.235-.58-1.335-.58h-1.748c0 7.641.015 15.268.015 22.91h-10.173V39.097h11.21Zm90.211 0c2.912.141 9.974.82 11.494 4.825.199.51.327 1.118.327 1.853v10.175c-.028.41-.171 2.25-1.705 3.722-1.491 1.4-3.48 1.485-4.276 1.485v.835c2.614-.07 4.83.934 5.626 2.66.312.68.312 1.289.312 1.6-.042 2.562-.611 17.46.156 19.654.283.846.778 1.538.782 1.543.255.354.512.622.711.82h-8.398c-.171-.014-1.421-.099-2.145-1.131a2.642 2.642 0 0 1-.469-1.415c-.057-1.557-.1-8.802 0-18.693 0-.141 0-.65-.384-1.09-.497-.594-1.235-.58-1.335-.58h-1.748c0 7.641.015 15.268.015 22.91h-10.173V39.097h11.21Zm-65.376 8.8c4.972 0 9.008 4.02 9.008 8.972v22.443c0 4.938-4.036 8.956-9.008 8.956h-2.544c-4.958 0-8.993-4.018-8.993-8.957V56.87c0-4.953 4.035-8.971 8.993-8.972h2.544Zm19.58 40.36h-9.064V39.127h9.064v49.13Zm11.01 0h-9.065V39.127h9.065v49.13Zm13.1-40.402c4.959 0 8.994 4.018 8.994 8.971v6.31h-8.482v-7.442c0-.976-.781-1.797-1.79-1.797s-1.776.82-1.776 1.797v.637c0 .453-.001.934.056 1.457.114 1.288.427 2.363.74 3.227.113.226.213.41.298.537.185.311.426.722.696 1.104.085.128.184.24.284.354a7.967 7.967 0 0 0 1.507 1.386c1.449 1.047 3.097 1.642 5.37 3.906 1.293 1.273 1.762 2.066 1.904 2.321a8.97 8.97 0 0 1 .938 2.377c.156.707.227 1.359.255 1.925v4.358c0 4.938-4.035 8.97-9.007 8.97h-2.544c-4.959 0-8.993-4.017-8.993-8.97v-6.297h8.482v7.443c0 .976.781 1.797 1.79 1.797s1.775-.821 1.775-1.797v-3.778c-.028-.835-.212-2.25-1.079-3.665-.028-.056-.057-.085-.099-.141a6.158 6.158 0 0 0-.612-.793 6.802 6.802 0 0 0-1.079-.977c-.128-.113-.228-.169-.299-.225-.127-.114-.269-.185-.397-.284-4.305-3-6.479-4.528-7.459-6.693a6.996 6.996 0 0 1-.299-.765 9.602 9.602 0 0 1-.341-1.145 15.244 15.244 0 0 1-.383-2.448 16.737 16.737 0 0 1 0-2.689c0-4.938 4.035-8.971 9.007-8.971h2.543Zm69.979 0c4.958 0 8.994 4.018 8.994 8.971v6.31h-8.482v-7.442c0-.976-.782-1.797-1.79-1.797-1.009 0-1.777.82-1.777 1.797v.637c0 .453 0 .934.057 1.457.113 1.288.426 2.363.739 3.227.114.226.214.41.299.537.185.311.425.722.695 1.104.085.128.185.24.284.354a8.028 8.028 0 0 0 1.507 1.386c1.449 1.047 3.097 1.642 5.37 3.906 1.293 1.273 1.763 2.066 1.905 2.321a9 9 0 0 1 .937 2.377c.156.707.228 1.359.256 1.925v4.358c0 4.938-4.035 8.97-9.008 8.97h-2.544c-4.958 0-8.993-4.017-8.993-8.97v-6.297h8.482v7.443c0 .976.782 1.797 1.791 1.797 1.008 0 1.775-.821 1.775-1.797v-3.778c-.029-.835-.213-2.25-1.079-3.665-.029-.056-.057-.085-.1-.141a6.154 6.154 0 0 0-.611-.793 6.846 6.846 0 0 0-1.079-.977c-.128-.113-.228-.169-.299-.225-.128-.114-.27-.185-.398-.284-4.304-3-6.478-4.528-7.459-6.693a7.198 7.198 0 0 1-.298-.765 9.42 9.42 0 0 1-.341-1.145 15.281 15.281 0 0 1-.384-2.448 16.854 16.854 0 0 1 0-2.689c0-4.938 4.035-8.971 9.008-8.971h2.543Zm-114.934 6.863c-.994 0-1.79.807-1.79 1.798v23.942a1.79 1.79 0 1 0 3.58 0V56.517c0-.99-.795-1.798-1.79-1.798ZM87.761 43.343c5.328.636 7.032 6.593 2.656 9.692-3.481 2.887-11.933 8.96-23.327 16.586-3.666-1.16-9.805-1.953-13.67-1.77v-6.75c7.96-5.648 15.933-11.283 23.905-16.918l1.188-.84h9.248ZM39.14 26.405h29.354c4.063.609 5.129 4.74 4.632 6.947H49.911c-3.509.157-6.535 3.453-6.564 6.721v16.218l-.407.28c-2.762 1.902-5.524 3.803-8.287 5.718V31.102c-.184-2.066 1.534-4.824 4.489-4.697Zm99.882 19.91c-.397-.326-1.151-.694-2.572-.482v13.514c.796.141 1.947.198 2.729-.48.881-.765.667-1.94.61-5.237-.085-5.051.341-6.438-.767-7.316Zm90.211 0c-.397-.326-1.151-.694-2.572-.482v13.514c.796.141 1.947.198 2.729-.48.88-.765.667-1.94.61-5.237-.085-5.051.341-6.438-.767-7.316ZM56.137 43.343h5.072c-2.6 1.952-5.186 3.905-7.786 5.857.028-.361-.086-4.51.084-4.725.284-.75 1.337-1.175 2.63-1.132Z"/>
             </svg>
           </span>
-          <a href="https://t.me/+79213581493" target="_blank" style="display: inline-block; width: 100%; max-width: 42px; min-width: 28px;">
+          <a href="https://t.me/+79213581493" target="_blank" rel="noopener noreferrer" aria-label="Telegram" style="display: inline-block; width: 100%; max-width: 42px; min-width: 28px;">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 42 42"
@@ -310,7 +330,7 @@
               <path fill="#fff" d="M20.902 0A21 21 0 1 0 21 0h-.098Zm8.683 12.642c.175-.003.562.04.814.245a.875.875 0 0 1 .3.569c.027.162.063.535.034.832-.314 3.321-1.683 11.378-2.38 15.097-.294 1.575-.873 2.102-1.434 2.152-1.218.114-2.144-.804-3.326-1.578-1.848-1.213-2.892-1.967-4.686-3.15-2.074-1.365-.73-2.117.451-3.343.31-.322 5.683-5.21 5.788-5.652.012-.056.024-.262-.098-.371-.123-.109-.305-.072-.436-.042-.185.043-3.138 1.994-8.857 5.854-.84.577-1.6.857-2.278.84-.75-.014-2.191-.422-3.264-.77-1.316-.429-2.36-.655-2.27-1.381.047-.378.568-.765 1.563-1.16 6.121-2.667 10.204-4.425 12.247-5.275 5.83-2.425 7.043-2.847 7.832-2.861Z"/>
             </svg>
           </a>
-          <a href="https://wa.me/79213581493" target="_blank" style="display: inline-block; width: 100%; max-width: 43px; min-width: 28px;">
+          <a href="https://wa.me/79213581493" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style="display: inline-block; width: 100%; max-width: 43px; min-width: 28px;">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 43 43"
@@ -330,16 +350,16 @@
       </div>
       <div class="footer-item">
         <p class="text white">Генеральный директор:<br> Гугнин Михаил Михайлович</p>
-        <a class="text white" href="tel:+79213581493" target="_blank">+7 921 358-14-93</a>
-        <a class="text white" href="mailto:info@prrolls.ru" target="_blank">info@prrolls.ru</a>
+        <a class="text white" href="tel:+79213581493">+7 921 358-14-93</a>
+        <a class="text white" href="mailto:info@prrolls.ru">info@prrolls.ru</a>
       </div>
     </div>
     <div class="divider gray"></div>
-    <a style="text-decoration: underline;" href="/personal_data_processing_policy.pdf" target="_blank" class="text gray">Согласие на обработку персональных данных</a><br>
-    <a style="text-decoration: underline;" href="/privacy_policy.pdf" target="_blank" class="text gray">Политика конфиденциальности</a><br>
+    <a style="text-decoration: underline;" href="/personal_data_processing_policy.pdf" target="_blank" rel="noopener noreferrer" class="text gray">Согласие на обработку персональных данных</a><br>
+    <a style="text-decoration: underline;" href="/privacy_policy.pdf" target="_blank" rel="noopener noreferrer" class="text gray">Политика конфиденциальности</a><br>
     <span class="text gray">ООО "ПР РОЛЛС РУС"</span><br>
     <span class="text gray">ИНН/КПП: 7814810536/781401001</span><br>
     <span class="text gray">ОГРН: 1227800086942</span><br><br><br>
     <span class="text gray">Ⓒ 2025 PR RollsRus. Все права защищены.</span>
-  </main>
+  </div>
 </footer>
